@@ -1,0 +1,80 @@
+<nav class="fixed top-0 w-full bg-white/95 backdrop-blur-md shadow-sm z-50 transition-all duration-300" x-data="{ isOpen: false, isScrolled: false }" x-init="window.addEventListener('scroll', () => { isScrolled = window.pageYOffset > 50 })">
+    <div class="container mx-auto px-4">
+        <div class="flex justify-between items-center h-20">
+            <!-- Logo -->
+            <div class="flex items-center">
+                <a href="{{ route('home') }}" class="flex items-center space-x-3 {{ app()->getLocale() === 'ar' ? 'space-x-reverse' : '' }}">
+                    <div class="w-12 h-12 bg-gradient-to-br from-red-600 to-red-800 rounded-lg flex items-center justify-center">
+                        <i class="fas fa-calendar-alt text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">وقت الحدث</h1>
+                        <p class="text-xs text-gray-600 hidden sm:block">Event Time</p>
+                    </div>
+                </a>
+            </div>
+
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center space-x-8 {{ app()->getLocale() === 'ar' ? 'space-x-reverse' : '' }}">
+                <a href="{{ route('home') }}" class="text-gray-700 hover:text-red-600 transition-colors font-medium">{{ __('الرئيسية') }}</a>
+                <a href="{{ route('services') }}" class="text-gray-700 hover:text-red-600 transition-colors font-medium">{{ __('خدماتنا') }}</a>
+                <a href="{{ route('gallery') }}" class="text-gray-700 hover:text-red-600 transition-colors font-medium">{{ __('معرض الأعمال') }}</a>
+                <a href="{{ route('about') }}" class="text-gray-700 hover:text-red-600 transition-colors font-medium">{{ __('من نحن') }}</a>
+                <a href="{{ route('contact') }}" class="text-gray-700 hover:text-red-600 transition-colors font-medium">{{ __('اتصل بنا') }}</a>
+            </div>
+
+            <!-- CTA Buttons & Language Switcher -->
+            <div class="hidden lg:flex items-center space-x-4 {{ app()->getLocale() === 'ar' ? 'space-x-reverse' : '' }}">
+                <!-- Language Switcher -->
+                <div class="relative" x-data="{ open: false }">
+                    <button @click="open = !open" class="flex items-center space-x-2 text-gray-700 hover:text-red-600 transition-colors">
+                        <i class="fas fa-globe"></i>
+                        <span class="text-sm font-medium">{{ app()->getLocale() === 'ar' ? 'العربية' : 'English' }}</span>
+                        <i class="fas fa-chevron-down text-xs"></i>
+                    </button>
+                    <div x-show="open" @click.away="open = false" x-transition class="absolute top-full mt-2 w-24 bg-white rounded-lg shadow-lg py-2">
+                        <a href="{{ route('language.switch', 'ar') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">العربية</a>
+                        <a href="{{ route('language.switch', 'en') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-red-50 hover:text-red-600">English</a>
+                    </div>
+                </div>
+                
+                <!-- Quick Contact Button -->
+                <a href="tel:+966500000000" class="flex items-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                    <i class="fas fa-phone"></i>
+                    <span class="text-sm font-medium">{{ __('اتصال سريع') }}</span>
+                </a>
+                
+                <!-- Quote Request Button -->
+                <a href="{{ route('quote') }}" class="bg-gradient-to-r from-red-600 to-red-800 text-white px-6 py-2 rounded-lg hover:from-red-700 hover:to-red-900 transition-all duration-300 transform hover:scale-105">
+                    <span class="font-medium">{{ __('طلب عرض سعر') }}</span>
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button @click="isOpen = !isOpen" class="lg:hidden text-gray-700 hover:text-red-600 transition-colors">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div x-show="isOpen" x-transition class="lg:hidden bg-white border-t">
+        <div class="container mx-auto px-4 py-4 space-y-3">
+            <a href="{{ route('home') }}" class="block text-gray-700 hover:text-red-600 transition-colors font-medium py-2">{{ __('الرئيسية') }}</a>
+            <a href="{{ route('services') }}" class="block text-gray-700 hover:text-red-600 transition-colors font-medium py-2">{{ __('خدماتنا') }}</a>
+            <a href="{{ route('gallery') }}" class="block text-gray-700 hover:text-red-600 transition-colors font-medium py-2">{{ __('معرض الأعمال') }}</a>
+            <a href="{{ route('about') }}" class="block text-gray-700 hover:text-red-600 transition-colors font-medium py-2">{{ __('من نحن') }}</a>
+            <a href="{{ route('contact') }}" class="block text-gray-700 hover:text-red-600 transition-colors font-medium py-2">{{ __('اتصل بنا') }}</a>
+            
+            <div class="pt-4 border-t space-y-3">
+                <a href="tel:+966500000000" class="flex items-center justify-center space-x-2 bg-red-600 text-white px-4 py-3 rounded-lg hover:bg-red-700 transition-colors">
+                    <i class="fas fa-phone"></i>
+                    <span class="font-medium">{{ __('اتصال سريع') }}</span>
+                </a>
+                <a href="{{ route('quote') }}" class="block text-center bg-gradient-to-r from-red-600 to-red-800 text-white px-6 py-3 rounded-lg hover:from-red-700 hover:to-red-900 transition-all duration-300">
+                    <span class="font-medium">{{ __('طلب عرض سعر') }}</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</nav>

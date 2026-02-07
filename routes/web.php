@@ -48,3 +48,8 @@ Route::group(['middleware' => 'web'], function() {
         return view('quote');
     })->name('quote');
 });
+
+// Admin Routes
+Route::prefix('admin')->name('admin.')->group(function () {
+    require __DIR__.'/admin.php';
+});

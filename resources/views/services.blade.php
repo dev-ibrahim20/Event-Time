@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'خدماتنا - وقت الحدث')
-@section('description', 'نقدم مجموعة شاملة من الخدمات المتخصصة لتجهيز المؤتمرات والمعارض والخيام الأوروبية والحفلات بأعلى معايير الجودة')
+@section('title', app()->getLocale() == 'ar' ? 'خدماتنا - وقت الحدث' : 'Our Services - Event Time')
+@section('description', app()->getLocale() == 'ar' ? 'نقدم مجموعة شاملة من الخدمات المتخصصة لتجهيز المؤتمرات والمعارض والخيام الأوروبية والحفلات بأعلى معايير الجودة' : 'We offer a comprehensive range of specialized services for conference, exhibition, and European tent setup with the highest quality standards')
 
 @section('content')
 <!-- Hero Section -->

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
-@section('title', 'وقت الحدث - تجهيز المؤتمرات والمعارض والخيام الأوروبية')
-@section('description', 'شركة وقت الحدث الرائدة في تجهيز المؤتمرات والمعارض والخيام الأوروبية بأعلى معايير الجودة والاحترافية في المملكة العربية السعودية')
+@section('title', app()->getLocale() == 'ar' ? 'وقت الحدث - تجهيز المؤتمرات والمعارض والخيام الأوروبية' : 'Event Time - Conference, Exhibition & European Tent Setup')
+@section('description', app()->getLocale() == 'ar' ? 'شركة وقت الحدث الرائدة في تجهيز المؤتمرات والمعارض والخيام الأوروبية بأعلى معايير الجودة والاحترافية في المملكة العربية السعودية' : 'Leading company in conference, exhibition, and European tent setup with highest quality and professional standards in Saudi Arabia')
 
 @section('structured-data')
 <script type="application/ld+json">

@@ -46,7 +46,7 @@
                             d="M3 5v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2zm2 0h14v14H5V5zm2 5h2v7H7zm4-3h2v10h-2zm4 6h2v4h-2z" />
                     </svg><span class="side-menu__label">الطلبات</span><i class="angle fe fe-chevron-down"></i></a>
                 <ul class="slide-menu">
-                    <li><a class="slide-item" href="{{ url('/' . $page = 'admin-services') }}">قائمة الطلبات</a></li>
+                    <li><a class="slide-item" href="{{ route('admin-quote-requests.index') }}">قائمة الطلبات</a></li>
                 </ul>
             </li>
             <li class="side-item side-item-category">الخدمات</li>
@@ -89,7 +89,7 @@
                     <li><a class="slide-item" href="{{ url('/roles') }}">Permissions</a></li>
                 </ul>
             </li>
-            <li class="side-item side-item-category">Settings</li>
+            <li class="side-item side-item-category">الاعدادات </li>
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page = '#') }}"><svg
                         xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 24 24" class="side-menu__icon"
@@ -115,10 +115,10 @@
                                     d="M17.5,15.83c0.88,0,1.73,0.09,2.5,0.26v-1.52c-0.79-0.15-1.64-0.24-2.5-0.24c-1.28,0-2.46,0.16-3.5,0.47v1.57 C14.99,16.02,16.18,15.83,17.5,15.83z" />
                             </g>
                         </g>
-                    </svg><span class="side-menu__label">Setteing</span><i class="angle fe fe-chevron-down"></i></a>
+                    </svg><span class="side-menu__label">الاعدادات</span><i class="angle fe fe-chevron-down"></i></a>
                 <ul class="slide-menu">
-                    <li><a class="slide-item" href="{{ url('/' . $page = 'sections') }}">Categories</a></li>
-                    <li><a class="slide-item" href="{{ url('/' . $page = 'products') }}">Products</a></li>
+                    <li><a class="slide-item" href="{{ url('/' . $page = 'admin-social-media') }}">السوشيال ميديا</a></li>
+                    <li><a class="slide-item" href="{{ url('/' . $page = '') }}">المنتجات</a></li>
                 </ul>
             </li>
         </ul>

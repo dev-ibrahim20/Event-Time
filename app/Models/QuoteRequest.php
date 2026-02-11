@@ -24,6 +24,7 @@ class QuoteRequest extends Model
         'email',
         'phone',
         'company',
+        'attachments',
         'urgent',
         'status',
     ];
@@ -32,6 +33,7 @@ class QuoteRequest extends Model
         'event_date' => 'date',
         'expected_attendees' => 'integer',
         'required_space' => 'integer',
+        'attachments' => 'array',
         'urgent' => 'boolean',
     ];
     

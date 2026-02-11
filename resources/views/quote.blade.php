@@ -32,7 +32,7 @@
                 </div>
                 <p class="text-red-100">{{ __('يرجى ملء جميع الحقول المطلوبة للحصول على عرض سعر دقيق') }}</p>
                 <!-- Form Body -->
-                <form id="quoteForm" class="p-8" onsubmit="handleQuoteForm('quoteForm'); return false;">
+                <form id="quoteForm" class="p-8" method="post" action="{{ route('quote-request.submit') }}" enctype="multipart/form-data" onsubmit="handleQuoteForm('quoteForm'); return false;">
                     @csrf
                     
                     <!-- Service Type Selection -->
@@ -43,34 +43,19 @@
                             <span class="text-red-600">*</span>
                         </label>
                         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                            <label class="service-option cursor-pointer">
-                                <input type="radio" name="service_type" value="tents" class="hidden" required>
-                                <div class="border-2 border-gray-300 rounded-lg p-4 text-center hover:border-red-600 transition-colors">
-                                    <i class="fas fa-campground text-3xl text-red-600 mb-2"></i>
-                                    <h4 class="font-bold">{{ app()->getLocale() == 'ar' ? 'الخيام الأوروبية' : 'European Tents' }}</h4>
-                                </div>
-                            </label>
-                            <label class="service-option cursor-pointer">
-                                <input type="radio" name="service_type" value="conferences" class="hidden" required>
-                                <div class="border-2 border-gray-300 rounded-lg p-4 text-center hover:border-red-600 transition-colors">
-                                    <i class="fas fa-users text-3xl text-blue-600 mb-2"></i>
-                                    <h4 class="font-bold">{{ app()->getLocale() == 'ar' ? 'المؤتمرات' : 'Conferences' }}</h4>
-                                </div>
-                            </label>
-                            <label class="service-option cursor-pointer">
-                                <input type="radio" name="service_type" value="exhibitions" class="hidden" required>
-                                <div class="border-2 border-gray-300 rounded-lg p-4 text-center hover:border-red-600 transition-colors">
-                                    <i class="fas fa-store text-3xl text-green-600 mb-2"></i>
-                                    <h4 class="font-bold">{{ app()->getLocale() == 'ar' ? 'المعارض' : 'Exhibitions' }}</h4>
-                                </div>
-                            </label>
-                            <label class="service-option cursor-pointer">
-                                <input type="radio" name="service_type" value="events" class="hidden" required>
-                                <div class="border-2 border-gray-300 rounded-lg p-4 text-center hover:border-red-600 transition-colors">
-                                    <i class="fas fa-glass-cheers text-3xl text-purple-600 mb-2"></i>
-                                    <h4 class="font-bold">{{ app()->getLocale() == 'ar' ? 'الحفلات' : 'Events' }}</h4>
-                                </div>
-                            </label>
+                            @if($services->isEmpty())
+                                <p class="text-gray-500">{{ __('No services available') }}</p>
+                            @else
+                            @foreach ($services as $service)
+                                <label class="service-option cursor-pointer">
+                                    <input type="radio" name="service_type" value="{{ $service->slug }}" class="hidden" required>
+                                    <div class="border-2 border-gray-300 rounded-lg p-4 text-center hover:border-red-600 transition-colors">
+                                        <i class="fas fa-briefcase text-3xl text-red-600 mb-2"></i>
+                                        <h4 class="font-bold">{{ app()->getLocale() == 'ar' ? $service->title_ar : $service->title_en }}</h4>
+                                    </div>
+                                </label>
+                            @endforeach
+                            @endif
                         </div>
                     </div>
                     

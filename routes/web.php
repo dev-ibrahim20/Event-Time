@@ -3,7 +3,9 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactMessagesController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\QuoteRequestsController;
 use App\Http\Controllers\ServicesController;
+use App\Http\Controllers\SocialMediaController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -49,10 +51,12 @@ Route::get('language/{locale}', function ($locale) {
     Route::get('gallery', function () {
         return view('gallery');
     })->name('gallery');
-    
-    Route::get('quote', function () {
-        return view('quote');
-    })->name('quote');
+
+    Route::get('quote', [QuoteRequestsController::class, 'create'])->name('quote');
+
+    Route::post('quote-request', [QuoteRequestsController::class, 'store'])->name('quote-request.submit');
+
+    Route::post('api/quote-request', [QuoteRequestsController::class, 'store']);
 
 
 
@@ -77,6 +81,17 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/admin-contact-messages', [ContactMessagesController::class, 'index'])->name('admin-contact-messages.index');
     Route::delete('/admin-contact-messages/{id}', [ContactMessagesController::class, 'destroy'])->name('admin-contact-messages.destroy');
+
+    Route::get('/admin-quote-requests', [QuoteRequestsController::class, 'index'])->name('admin-quote-requests.index');
+    Route::post('/admin-quote-requests/{id}/toggle', [QuoteRequestsController::class, 'toggle'])->name('admin-quote-requests.toggle');
+    Route::delete('/admin-quote-requests/{id}', [QuoteRequestsController::class, 'destroy'])->name('admin-quote-requests.destroy');
+
+    Route::get('/admin-social-media', [SocialMediaController::class, 'index'])->name('admin-social-media.index');
+    Route::get('/admin-social-media/create', [SocialMediaController::class, 'create'])->name('admin-social-media.create');
+    Route::post('/admin-social-media', [SocialMediaController::class, 'store'])->name('admin-social-media.store');
+    Route::get('/admin-social-media/{socialMedia}/edit', [SocialMediaController::class, 'edit'])->name('admin-social-media.edit');
+    Route::put('/admin-social-media/{socialMedia}', [SocialMediaController::class, 'update'])->name('admin-social-media.update');
+    Route::delete('/admin-social-media/{socialMedia}', [SocialMediaController::class, 'destroy'])->name('admin-social-media.destroy');
 
 });
 

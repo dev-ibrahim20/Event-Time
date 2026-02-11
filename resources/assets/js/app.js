@@ -102,7 +102,7 @@ window.handleQuoteForm = async function(formId) {
     submitBtn.disabled = true;
 
     try {
-        const response = await fetch('/api/quote-request', {
+        const response = await fetch('/quote-request', {
             method: 'POST',
             body: formData,
             headers: {

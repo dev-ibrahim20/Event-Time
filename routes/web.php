@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactMessagesController;
+use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\QuoteRequestsController;
 use App\Http\Controllers\ServicesController;
@@ -92,6 +93,13 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin-social-media/{socialMedia}/edit', [SocialMediaController::class, 'edit'])->name('admin-social-media.edit');
     Route::put('/admin-social-media/{socialMedia}', [SocialMediaController::class, 'update'])->name('admin-social-media.update');
     Route::delete('/admin-social-media/{socialMedia}', [SocialMediaController::class, 'destroy'])->name('admin-social-media.destroy');
+
+    Route::get('/admin-portfolios', [PortfolioController::class, 'index'])->name('admin-portfolios.index');
+    Route::get('/admin-portfolios/create', [PortfolioController::class, 'create'])->name('admin-portfolios.create');
+    Route::post('/admin-portfolios', [PortfolioController::class, 'store'])->name('admin-portfolios.store');
+    Route::get('/admin-portfolios/{portfolio}/edit', [PortfolioController::class, 'edit'])->name('admin-portfolios.edit');
+    Route::put('/admin-portfolios/{portfolio}', [PortfolioController::class, 'update'])->name('admin-portfolios.update');
+    Route::delete('/admin-portfolios/{portfolio}', [PortfolioController::class, 'destroy'])->name('admin-portfolios.destroy');
 
 });
 

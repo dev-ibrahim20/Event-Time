@@ -129,9 +129,9 @@
                 {{ app()->getLocale() == 'ar' ? 'تواصل معنا الآن واحصل على استشارة مجانية وعرض سعر خاص' : 'Contact us now and get a free consultation and special quote' }}
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="{{ route('quote') }}" class="bg-white text-red-600 px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl">
-                    <i class="fas fa-file-invoice ml-2"></i>
-                    {{ app()->getLocale() == 'ar' ? 'طلب استشارة مجانية' : 'Request Free Consultation' }}
+                <a href="https://wa.me/966500000000" class="bg-white text-red-600 px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl">
+                    <i class="fab fa-whatsapp ml-2"></i>
+                    {{ app()->getLocale() == 'ar' ? 'تواصل عبر واتس앱' : 'Contact via WhatsApp' }}
                 </a>
                 <a href="tel:+966500000000" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-white hover:text-red-600 transition-all duration-300 transform hover:scale-105">
                     <i class="fas fa-phone ml-2"></i>

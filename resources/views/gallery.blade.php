@@ -146,10 +146,11 @@
                     <i class="fas fa-star mr-2"></i>
                     {{ app()->getLocale() == 'ar' ? 'أو' : 'OR' }}
                     <i class="fas fa-star ml-2"></i>
+                    <br><br>
                 </span>
             </div>
         </div>
-        
+
         <!-- Videos Section -->
         <div>
             <!-- Section Header -->

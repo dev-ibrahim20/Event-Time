@@ -63,7 +63,7 @@ Route::get('language/{locale}', function ($locale) {
         return view('gallery');
     })->name('gallery');
 
-    Route::get('quote', [QuoteRequestsController::class, 'create'])->name('quote');
+    // Route::get('quote', [QuoteRequestsController::class, 'create'])->name('quote');
     
     Route::get('service-details/{service}', function ($service) {
         $service = \App\Models\Service::where('slug', $service)->first();
@@ -73,9 +73,9 @@ Route::get('language/{locale}', function ($locale) {
         return view('service-details', compact('service'));
     })->name('service-details');
     
-    Route::post('quote-request', [QuoteRequestsController::class, 'store'])->name('quote-request.submit');
+    // Route::post('quote-request', [QuoteRequestsController::class, 'store'])->name('quote-request.submit');
 
-    Route::post('api/quote-request', [QuoteRequestsController::class, 'store']);
+    // Route::post('api/quote-request', [QuoteRequestsController::class, 'store']);
 
     // Products Routes
     Route::get('products', [FrontendProductsController::class, 'index'])->name('products.index');
@@ -105,9 +105,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin-contact-messages', [ContactMessagesController::class, 'index'])->name('admin-contact-messages.index');
     Route::delete('/admin-contact-messages/{id}', [ContactMessagesController::class, 'destroy'])->name('admin-contact-messages.destroy');
 
-    Route::get('/admin-quote-requests', [QuoteRequestsController::class, 'index'])->name('admin-quote-requests.index');
-    Route::post('/admin-quote-requests/{id}/toggle', [QuoteRequestsController::class, 'toggle'])->name('admin-quote-requests.toggle');
-    Route::delete('/admin-quote-requests/{id}', [QuoteRequestsController::class, 'destroy'])->name('admin-quote-requests.destroy');
+    // Route::get('/admin-quote-requests', [QuoteRequestsController::class, 'index'])->name('admin-quote-requests.index');
+    // Route::post('/admin-quote-requests/{id}/toggle', [QuoteRequestsController::class, 'toggle'])->name('admin-quote-requests.toggle');
+    // Route::delete('/admin-quote-requests/{id}', [QuoteRequestsController::class, 'destroy'])->name('admin-quote-requests.destroy');
 
     Route::get('/admin-social-media', [SocialMediaController::class, 'index'])->name('admin-social-media.index');
     Route::get('/admin-social-media/create', [SocialMediaController::class, 'create'])->name('admin-social-media.create');
@@ -116,12 +116,12 @@ Route::middleware('auth')->group(function () {
     Route::put('/admin-social-media/{socialMedia}', [SocialMediaController::class, 'update'])->name('admin-social-media.update');
     Route::delete('/admin-social-media/{socialMedia}', [SocialMediaController::class, 'destroy'])->name('admin-social-media.destroy');
 
-    Route::get('/admin-team-members', [TeamMemberController::class, 'index'])->name('admin-team-members.index');
-    Route::get('/admin-team-members/create', [TeamMemberController::class, 'create'])->name('admin-team-members.create');
-    Route::post('/admin-team-members', [TeamMemberController::class, 'store'])->name('admin-team-members.store');
-    Route::get('/admin-team-members/{teamMember}/edit', [TeamMemberController::class, 'edit'])->name('admin-team-members.edit');
-    Route::put('/admin-team-members/{teamMember}', [TeamMemberController::class, 'update'])->name('admin-team-members.update');
-    Route::delete('/admin-team-members/{teamMember}', [TeamMemberController::class, 'destroy'])->name('admin-team-members.destroy');
+    // Route::get('/admin-team-members', [TeamMemberController::class, 'index'])->name('admin-team-members.index');
+    // Route::get('/admin-team-members/create', [TeamMemberController::class, 'create'])->name('admin-team-members.create');
+    // Route::post('/admin-team-members', [TeamMemberController::class, 'store'])->name('admin-team-members.store');
+    // Route::get('/admin-team-members/{teamMember}/edit', [TeamMemberController::class, 'edit'])->name('admin-team-members.edit');
+    // Route::put('/admin-team-members/{teamMember}', [TeamMemberController::class, 'update'])->name('admin-team-members.update');
+    // Route::delete('/admin-team-members/{teamMember}', [TeamMemberController::class, 'destroy'])->name('admin-team-members.destroy');
 
     Route::get('/admin-clients', [ClientController::class, 'index'])->name('admin-clients.index');
     Route::get('/admin-clients/create', [ClientController::class, 'create'])->name('admin-clients.create');
@@ -141,26 +141,18 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin-about-us/edit', [AboutUsController::class, 'edit'])->name('admin-about-us.edit');
     Route::put('/admin-about-us', [AboutUsController::class, 'update'])->name('admin-about-us.update');
 
-    Route::get('/admin-papers', [PapersController::class, 'index'])->name('admin-papers.index');
-    Route::post('/admin-papers', [PapersController::class, 'update'])->name('admin-papers.update');
-    Route::delete('/admin-papers/{papers}', [PapersController::class, 'destroy'])->name('admin-papers.destroy');
+        // Route::get('/admin-papers', [PapersController::class, 'index'])->name('admin-papers.index');
+        // Route::post('/admin-papers', [PapersController::class, 'update'])->name('admin-papers.update');
+        // Route::delete('/admin-papers/{papers}', [PapersController::class, 'destroy'])->name('admin-papers.destroy');
 
     // Offers Routes
     Route::resource('admin-offers', AdminOffersController::class);
 
-    // Careers Routes
-    Route::resource('admin-careers', AdminCareersController::class);
+        // // Careers Routes
+        // Route::resource('admin-careers', AdminCareersController::class);
 
     // Products Routes
     Route::resource('admin-products', AdminProductsController::class);
-
-    // Social Media Routes
-    Route::get('/admin-social-media', [SocialMediaController::class, 'index'])->name('admin-social-media.index');
-    Route::get('/admin-social-media/create', [SocialMediaController::class, 'create'])->name('admin-social-media.create');
-    Route::post('/admin-social-media', [SocialMediaController::class, 'store'])->name('admin-social-media.store');
-    Route::get('/admin-social-media/{socialMedia}/edit', [SocialMediaController::class, 'edit'])->name('admin-social-media.edit');
-    Route::put('/admin-social-media/{socialMedia}', [SocialMediaController::class, 'update'])->name('admin-social-media.update');
-    Route::delete('/admin-social-media/{socialMedia}', [SocialMediaController::class, 'destroy'])->name('admin-social-media.destroy');
 
     // Static Contents Routes
     Route::get('/admin-static-contents', [AdminStaticContentsController::class, 'index'])->name('admin-static-contents.index');

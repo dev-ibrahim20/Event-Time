@@ -3,13 +3,13 @@
 <aside class="app-sidebar sidebar-scroll">
     <div class="main-sidebar-header active">
         <a class="desktop-logo logo-light active" href="{{ url('/' . $page = 'index') }}"><img
-                src="{{URL::asset('assets/img/brand/logo.png')}}" class="main-logo" alt="logo"></a>
+                src="{{URL::asset('assets/images/logo-even.jpeg')}}" class="main-logo" alt="logo" style="width: 60px; height: 60px;"></a>
         <a class="desktop-logo logo-dark active" href="{{ url('/' . $page = 'index') }}"><img
-                src="{{URL::asset('assets/img/brand/logo-white.png')}}" class="main-logo dark-theme" alt="logo"></a>
+                src="{{URL::asset('assets/images/logo-even.jpeg')}}" class="main-logo dark-theme" alt="logo" style="width: 60px; height: 60px;"></a>
         <a class="logo-icon mobile-logo icon-light active" href="{{ url('/' . $page = 'index') }}"><img
-                src="{{URL::asset('assets/img/brand/favicon.png')}}" class="logo-icon" alt="logo"></a>
+                src="{{URL::asset('assets/images/logo-even.jpeg')}}" class="logo-icon" alt="logo" style="width: 40px; height: 40px;"></a>
         <a class="logo-icon mobile-logo icon-dark active" href="{{ url('/' . $page = 'index') }}"><img
-                src="{{URL::asset('assets/img/brand/favicon-white.png')}}" class="logo-icon dark-theme" alt="logo"></a>
+                src="{{URL::asset('assets/images/logo-even.jpeg')}}" class="logo-icon dark-theme" alt="logo" style="width: 40px; height: 40px;"></a>
     </div>
     <div class="main-sidemenu">
         <div class="app-sidebar__user clearfix">
@@ -36,7 +36,7 @@
                             d="M3 13h8V3H3v10zm2-8h4v6H5V5zm8 16h8V11h-8v10zm2-8h4v6h-4v-6zM13 3v6h8V3h-8zm6 4h-4V5h4v2zM3 21h8v-6H3v6zm2-4h4v2H5v-2z" />
                     </svg><span class="side-menu__label">الرئيسية</span></a>
             </li>
-            <li class="side-item side-item-category">الطلبات</li>
+            {{-- <li class="side-item side-item-category">الطلبات</li>
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page = '#') }}"><svg
                         xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24">
@@ -48,7 +48,7 @@
                 <ul class="slide-menu">
                     <li><a class="slide-item" href="{{ route('admin-quote-requests.index') }}">قائمة الطلبات</a></li>
                 </ul>
-            </li>
+            </li> --}}
             <li class="side-item side-item-category">الخدمات</li>
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="{{ url('/' . $page = '#') }}"><svg
@@ -98,7 +98,7 @@
                     <li><a class="slide-item" href="{{ route('admin-about-us.index') }}">من نحن</a></li>
                 </ul>
             </li>
-            <li class="side-item side-item-category">الأوراق</li>
+            {{-- <li class="side-item side-item-category">الأوراق</li>
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="{{ url('/' . ($page = '#')) }}"><svg
                         xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24">
@@ -108,8 +108,8 @@
                 <ul class="slide-menu">
                     <li><a class="slide-item" href="{{ route('admin-papers.index') }}">الأوراق</a></li>
                 </ul>
-            </li>
-            <li class="side-item side-item-category">الفريق والتوظيف</li>
+            </li> --}}
+            {{-- <li class="side-item side-item-category">الفريق والتوظيف</li>
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="{{ url('/' . ($page = '#')) }}"><svg
                         xmlns="http://www.w3.org/2000/svg" class="side-menu__icon" viewBox="0 0 24 24">
@@ -120,7 +120,7 @@
                     <li><a class="slide-item" href="{{ route('admin-team-members.index') }}">أعضاء الفريق</a></li>
                     <li><a class="slide-item" href="{{ route('admin-careers.index') }}">التوظيف</a></li>
                 </ul>
-            </li>
+            </li> --}}
             <li class="side-item side-item-category">العملاء</li>
             <li class="slide">
                 <a class="side-menu__item" data-toggle="slide" href="{{ url('/' . ($page = '#')) }}"><svg

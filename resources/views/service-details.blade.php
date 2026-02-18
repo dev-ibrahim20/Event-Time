@@ -4,14 +4,21 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="relative py-20 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900 overflow-hidden" id="heroSection">
+<section class="relative py-20 overflow-hidden" id="heroSection" style="background-color: #53565c;">
+    <!-- Hero Background Image -->
+    <div class="absolute inset-0">
+        <img src="{{ isset($service->image) ? asset('storage/' . $service->image) : 'https://picsum.photos/1920/600?random=hero' }}" 
+             alt="{{ app()->getLocale() == 'ar' ? (isset($service) ? $service->title_ar : 'خدمة') : (isset($service) ? $service->title_en : 'Service') }}" 
+             class="w-full h-full object-cover opacity-30">
+    </div>
+    
     <!-- Animated Background -->
     <div class="absolute inset-0">
-        <div class="absolute top-0 left-0 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl animate-pulse floating-shape" style="animation-duration: 4s;"></div>
-        <div class="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse floating-shape" style="animation-duration: 6s; animation-delay: 1s;"></div>
-        <div class="absolute top-1/2 left-1/4 w-64 h-64 bg-indigo-500/10 rounded-full blur-2xl floating-shape" style="animation-duration: 5s; animation-delay: 2s;"></div>
-        <div class="absolute top-1/3 right-1/3 w-80 h-80 bg-pink-500/10 rounded-full blur-3xl floating-shape" style="animation-duration: 7s; animation-delay: 3s;"></div>
-        <div class="absolute bottom-1/4 left-1/3 w-72 h-72 bg-cyan-500/10 rounded-full blur-2xl floating-shape" style="animation-duration: 8s; animation-delay: 4s;"></div>
+        <div class="absolute top-0 left-0 w-96 h-96 bg-red-400/10 rounded-full blur-3xl animate-pulse floating-shape" style="animation-duration: 4s;"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-red-300/10 rounded-full blur-3xl animate-pulse floating-shape" style="animation-duration: 6s; animation-delay: 1s;"></div>
+        <div class="absolute top-1/2 left-1/4 w-64 h-64 bg-orange-400/10 rounded-full blur-2xl floating-shape" style="animation-duration: 5s; animation-delay: 2s;"></div>
+        <div class="absolute top-1/3 right-1/3 w-80 h-80 bg-yellow-500/10 rounded-full blur-3xl floating-shape" style="animation-duration: 7s; animation-delay: 3s;"></div>
+        <div class="absolute bottom-1/4 left-1/3 w-72 h-72 bg-pink-400/10 rounded-full blur-2xl floating-shape" style="animation-duration: 8s; animation-delay: 4s;"></div>
     </div>
     
     <div class="container mx-auto px-4 relative z-10">
@@ -23,7 +30,7 @@
                     {{ app()->getLocale() == 'ar' ? 'تفاصيل الخدمة' : 'Service Details' }}
                 @endif
             </h1>
-            <p class="text-xl md:text-2xl text-gray-300 mb-8" data-aos="fade-up" data-aos-delay="200">
+            <p class="text-xl md:text-2xl text-white mb-8" data-aos="fade-up" data-aos-delay="200">
                 {{ app()->getLocale() == 'ar' ? 'اكتشف خدماتنا المتميزة' : 'Discover our premium services' }}
             </p>
         </div>

@@ -25,8 +25,8 @@
             <h5>{{ $productsCount }}</h5>
         </div>
         <div>
-            <label class="tx-13">Quote Requests</label>
-            <h5>{{ $quoteRequestsCount }}</h5>
+            <label class="tx-13">Total Clients</label>
+            <h5>{{ $clientsCount }}</h5>
         </div>
     </div>
 </div>
@@ -81,13 +81,13 @@
         <div class="card overflow-hidden sales-card bg-success-gradient">
             <div class="pl-3 pt-3 pr-3 pb-2">
                 <div class="">
-                    <h6 class="mb-3 tx-12 text-white">Quote Requests</h6>
+                    <h6 class="mb-3 tx-12 text-white">Clients</h6>
                 </div>
                 <div class="pb-0 mt-0">
                     <div class="d-flex">
                         <div class="">
-                            <h4 class="tx-20 font-weight-bold mb-1 text-white">{{ $quoteRequestsCount }}</h4>
-                            <p class="mb-0 tx-12 text-white op-7">Total Requests</p>
+                            <h4 class="tx-20 font-weight-bold mb-1 text-white">{{ $clientsCount }}</h4>
+                            <p class="mb-0 tx-12 text-white op-7">Total Clients</p>
                         </div>
                         <span class="float-right my-auto mr-auto">
                             <i class="fas fa-arrow-circle-up text-white"></i>

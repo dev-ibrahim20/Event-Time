@@ -268,26 +268,26 @@
     <div class="container mx-auto px-4 text-center">
         <div class="max-w-3xl mx-auto" data-aos="fade-up">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">
-                {{ app()->getLocale() == 'ar' ? 'انضم إلى فريق عملائنا' : 'Join Our Client Family' }}
+                {{ app()->getLocale() == 'ar' ? 'انضم إلى شركائنا شركاء النجاح' : 'Join Our Client Family' }}
             </h2>
             <p class="text-xl mb-8 text-red-100">
-                {{ app()->getLocale() == 'ar' ? 'نبحث دائماً عن المواهب الطموحة الذين يشاركونا شغفنا في تحقيق أهدافنا' : 'We are always looking for ambitious talents who share our passion for achieving our goals' }}
+                {{ app()->getLocale() == 'ar' ? 'نبحث دائماً عن الشركاء الذين يشاركونا شغفنا في تحقيق أهدافنا' : 'We are always looking for partners who share our passion for achieving our goals' }}
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
                 <a href="{{ route('contact') }}" class="bg-white text-red-600 px-8 py-4 rounded-lg text-lg font-bold hover:bg-gray-100 transition-all duration-300 transform hover:scale-105 shadow-xl">
                     <i class="fas fa-briefcase ml-2"></i>
-                    {{ app()->getLocale() == 'ar' ? 'توظف معنا' : 'Work With Us' }}
+                    {{ app()->getLocale() == 'ar' ? 'تواصل معنا' : 'Contact Us' }}
                 </a>
-                <a href="{{ route('contact') }}" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-white hover:text-red-600 transition-all duration-300 transform hover:scale-105">
-                    <i class="fas fa-paper-plane ml-2"></i>
-                    {{ app()->getLocale() == 'ar' ? 'طلب استشارة' : 'Request Consultation' }}
+                <a href="https://wa.me/966555555555" class="bg-transparent border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-green-600 hover:text-white transition-all duration-300 transform hover:scale-105">
+                    <i class="fab fa-whatsapp ml-2"></i>
+                    {{ app()->getLocale() == 'ar' ? 'تواصل عبر واتس앱' : 'Contact via WhatsApp' }}
                 </a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Certifications Section -->
+{{-- <!-- Certifications Section -->
 <section class="py-20 bg-white">
     <div class="container mx-auto px-4">
         <div class="text-center mb-12" data-aos="fade-up">
@@ -326,7 +326,7 @@
             </div>
         </div>
     </div>
-</section>
+</section> --}}
 
 @include('partials.clients-simple')
 

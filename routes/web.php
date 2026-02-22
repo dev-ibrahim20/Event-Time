@@ -83,7 +83,9 @@ Route::get('language/{locale}', function ($locale) {
 
 
 
-
+// Route::get('www', function() {
+//     return view('muhaya-fixed');
+// });
 
 
 

@@ -1,22 +1,22 @@
 <!-- main-sidebar -->
 <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
 <aside class="app-sidebar sidebar-scroll">
-    <div class="main-sidebar-header active">
+    {{-- <div class="main-sidebar-header active">
         <a class="desktop-logo logo-light active" href="{{ url('/' . $page = 'index') }}"><img
-                src="{{URL::asset('assets/images/logo-even.jpeg')}}" class="main-logo" alt="logo" style="width: 60px; height: 60px;"></a>
+                src="{{URL::asset('assets/images/logo-even.jpeg')}}" class="main-logo" alt="logo" ></a>
         <a class="desktop-logo logo-dark active" href="{{ url('/' . $page = 'index') }}"><img
-                src="{{URL::asset('assets/images/logo-even.jpeg')}}" class="main-logo dark-theme" alt="logo" style="width: 60px; height: 60px;"></a>
+                src="{{URL::asset('assets/images/logo-even.jpeg')}}" class="main-logo dark-theme" alt="logo" ></a>
         <a class="logo-icon mobile-logo icon-light active" href="{{ url('/' . $page = 'index') }}"><img
                 src="{{URL::asset('assets/images/logo-even.jpeg')}}" class="logo-icon" alt="logo" style="width: 40px; height: 40px;"></a>
         <a class="logo-icon mobile-logo icon-dark active" href="{{ url('/' . $page = 'index') }}"><img
-                src="{{URL::asset('assets/images/logo-even.jpeg')}}" class="logo-icon dark-theme" alt="logo" style="width: 40px; height: 40px;"></a>
-    </div>
+                src="{{URL::asset('assets/images/logo-even.jpeg')}}" class="logo-icon dark-theme" alt="logo"></a>
+    </div> --}}
     <div class="main-sidemenu">
         <div class="app-sidebar__user clearfix">
             <div class="dropdown user-pro-body">
                 <div class="">
                     <img alt="user-img" class="avatar avatar-xl brround"
-                        src="{{URL::asset('assets/img/66.jpg')}}"><span
+                        src="{{URL::asset('assets/images/logo-even.jpeg')}}"><span
                         class="avatar-status profile-status bg-green"></span>
                 </div>
                 <div class="user-info">

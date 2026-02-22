@@ -1,10 +1,10 @@
 @extends('layouts.master')
 
 @section('title', app()->getLocale() == 'ar' ? 'تفاصيل الخدمة - ' . (isset($service) ? $service->title_ar : '') : 'Service Details - ' . (isset($service) ? $service->title_en : ''))
-
+    
 @section('content')
 <!-- Hero Section -->
-<section class="relative py-20 overflow-hidden" id="heroSection" style="background-color: #53565c;">
+<section class="relative py-20 overflow-hidden" id="heroSection" style="background-color: #7fa5ef;">
     <!-- Hero Background Image -->
     <div class="absolute inset-0">
         <img src="{{ isset($service->image) ? asset('storage/' . $service->image) : 'https://picsum.photos/1920/600?random=hero' }}" 

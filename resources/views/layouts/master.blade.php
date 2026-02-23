@@ -7,7 +7,7 @@
     
     <!-- SEO Meta Tags -->
     <title>@yield('title', 'وقت الحدث - تجهيز المؤتمرات والمعارض والخيام الأوروبية')</title>
-    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/favicon.ico') }}">
+    <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/logo-even.jpeg') }}">
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/apple-touch-icon.png') }}">
     <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/favicon-32x32.png') }}">
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon-16x16.png') }}">

@@ -14,22 +14,105 @@
                 <p class="text-gray-300 leading-relaxed">
                     {{ app()->getLocale() == 'ar' ? 'شركتنا الرائدة في تجهيز المؤتمرات والمعارض والخيام الأوروبية بأعلى معايير الجودة والاحترافية.' : 'Our trusted company in conference, exhibition, and European tent setup with the highest quality and professional standards.' }}
                 </p>
+                @php
+    $socialLinks = \App\Models\SocialMedia::where('is_active', true)->orderBy('sort_order')->get();
+@endphp
                 <div class="flex space-x-4 {{ app()->getLocale() === 'ar' ? 'space-x-reverse' : '' }}">
-                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
-                        <i class="fab fa-facebook-f"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
-                        <i class="fab fa-twitter"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
-                        <i class="fab fa-instagram"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
-                        <i class="fab fa-linkedin-in"></i>
-                    </a>
-                    <a href="#" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
-                        <i class="fab fa-tiktok"></i>
-                    </a>
+                    @php
+                        $sidebarSocialLinks = \App\Models\SocialMedia::where('is_active', true)->orderBy('sort_order')->get();
+                    @endphp
+                    
+                    @foreach($sidebarSocialLinks as $social)
+                        @if ($social->name == 'whatsapp')
+                            <!-- WhatsApp -->
+                        <a href="https://wa.me/201234567890?text={{ app()->getLocale() == 'ar' ? 'أريد استفسار' : 'I have a question' }}" target="_blank" class="w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                            <i class="fab fa-whatsapp text-xl"></i>
+                        </a>
+                        @endif
+
+                        @if ($social->name == 'phone')
+                        <!-- Phone -->
+                        <a href="tel:+966500000000" class="w-12 h-12 bg-blue-800 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                            <i class="fas fa-phone text-xl"></i>
+                        </a>
+                        @endif
+                        
+                        @if ($social->name == 'instagram')
+                        <!-- Instagram -->
+                        <a href="
+                            @php
+                                \App\Models\SocialMedia::where('name', 'instagram')->first()->url ?? '/';
+                            @endphp
+                        
+                        " target="_blank" class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-700 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                            <i class="fab fa-instagram text-xl"></i>
+                        </a>
+                        @endif
+                        
+                        @if ($social->name == 'facebook')
+                        <!-- Facebook -->
+                        <a href="
+                            @php
+                                \App\Models\SocialMedia::where('name', 'facebook')->first()->url ?? '/';
+                            @endphp
+                        " target="_blank" class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                            <i class="fab fa-facebook-f text-xl"></i>
+                        </a>
+                        @endif
+                        
+                        @if ($social->name == 'twitter')
+                        <!-- Twitter -->
+                        <a href="
+                            @php
+                                \App\Models\SocialMedia::where('name', 'twitter')->first()->url ?? '/';
+                            @endphp
+                        " target="_blank" class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        @endif
+                        
+                        @if ($social->name == 'tiktok')
+                        <!-- TikTok -->
+                        <a href="
+                            @php
+                                \App\Models\SocialMedia::where('name', 'tiktok')->first()->url ?? '/';
+                            @endphp
+                        " target="_blank" class="w-12 h-12 bg-black-500 text-white rounded-full flex items-center justify-center hover:bg-black-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                            <i class="fab fa-tiktok text-xl"></i>
+                        </a>
+                        @endif
+                        
+                        @if ($social->name == 'snapchat')
+                        <!-- Snapchat -->
+                        <a href="
+                            @php
+                                \App\Models\SocialMedia::where('name', 'snapchat')->first()->url ?? '/';
+                            @endphp
+                        " target="_blank" class="w-12 h-12 bg-yellow-500 text-white rounded-full flex items-center justify-center hover:bg-yellow-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                            <i class="fab fa-snapchat-ghost text-xl"></i>
+                        </a>
+                        @endif
+
+                    @endforeach
+                    
+                    <!-- Fallback icons if no data in database -->
+                    @if($socialLinks->isEmpty())
+                        <a href="#" onclick="location.reload()" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" onclick="location.reload()" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" onclick="location.reload()" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" onclick="location.reload()" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" onclick="location.reload()" class="w-10 h-10 bg-gray-800 rounded-full flex items-center justify-center hover:bg-red-600 transition-colors">
+                            <i class="fab fa-tiktok"></i>
+                        </a>
+                    @endif
                 </div>
             </div>
 
@@ -105,35 +188,125 @@
     </div>
 </footer>
 
+    @php
+        $sidebarSocialLinks = \App\Models\SocialMedia::where('is_active', true)->orderBy('sort_order')->get();
+    @endphp
+
+
 <!-- Fixed Social Media Sidebar -->
 <div class="fixed {{ app()->getLocale() === 'ar' ? 'left-4' : 'right-4' }} top-1/2 transform -translate-y-1/2 z-40 flex flex-col space-y-3">
-    <!-- WhatsApp -->
-    <a href="https://wa.me/201234567890?text={{ app()->getLocale() == 'ar' ? 'أريد استفسار' : 'I have a question' }}" target="_blank" class="w-12 h-12 bg-green-500 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
-        <i class="fab fa-whatsapp text-xl"></i>
-    </a>
+    @php
+        $sidebarSocialLinks = \App\Models\SocialMedia::where('is_active', true)->orderBy('sort_order')->get();
+    @endphp
     
-    <!-- Phone -->
-    <a href="tel:+966500000000" class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
-        <i class="fas fa-phone text-xl"></i>
-    </a>
+    @foreach($sidebarSocialLinks as $social)
+        @if ($social->name == 'whatsapp')
+            <!-- WhatsApp -->
+        <a href="https://wa.me/201234567890?text={{ app()->getLocale() == 'ar' ? 'أريد استفسار' : 'I have a question' }}" target="_blank" class="w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+            <i class="fab fa-whatsapp text-xl"></i>
+        </a>
+        @endif
+
+        @if ($social->name == 'phone')
+        <!-- Phone -->
+        <a href="tel:+966500000000" class="w-12 h-12 bg-blue-800 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+            <i class="fas fa-phone text-xl"></i>
+        </a>
+        @endif
+        
+        @if ($social->name == 'instagram')
+        <!-- Instagram -->
+        <a href="
+             @php
+                \App\Models\SocialMedia::where('name', 'instagram')->first()->url ?? '/';
+            @endphp
+        
+        " target="_blank" class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-700 transition-all duration-300 transform hover:scale-110 shadow-lg">
+            <i class="fab fa-instagram text-xl"></i>
+        </a>
+        @endif
+        
+        @if ($social->name == 'facebook')
+        <!-- Facebook -->
+        <a href="
+              @php
+                \App\Models\SocialMedia::where('name', 'facebook')->first()->url ?? '/';
+            @endphp
+        " target="_blank" class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+            <i class="fab fa-facebook-f text-xl"></i>
+        </a>
+        @endif
+        
+        @if ($social->name == 'twitter')
+        <!-- Twitter -->
+        <a href="
+              @php
+                \App\Models\SocialMedia::where('name', 'twitter')->first()->url ?? '/';
+            @endphp
+        " target="_blank" class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+            <i class="fab fa-twitter text-xl"></i>
+        </a>
+        @endif
+        
+        @if ($social->name == 'tiktok')
+        <!-- TikTok -->
+        <a href="
+            @php
+                \App\Models\SocialMedia::where('name', 'tiktok')->first()->url ?? '/';
+            @endphp
+        " target="_blank" class="w-12 h-12 bg-black-500 text-white rounded-full flex items-center justify-center hover:bg-black-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+            <i class="fab fa-tiktok text-xl"></i>
+        </a>
+        @endif
+        
+        @if ($social->name == 'snapchat')
+        <!-- Snapchat -->
+        <a href="
+            @php
+                \App\Models\SocialMedia::where('name', 'snapchat')->first()->url ?? '/';
+            @endphp
+        " target="_blank" class="w-12 h-12 bg-yellow-500 text-white rounded-full flex items-center justify-center hover:bg-yellow-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+            <i class="fab fa-snapchat-ghost text-xl"></i>
+        </a>
+        @endif
+
+    @endforeach
     
-    <!-- Instagram -->
-    <a href="#" class="w-12 h-12 bg-pink-500 text-white rounded-full flex items-center justify-center hover:bg-pink-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
-        <i class="fab fa-instagram text-xl"></i>
-    </a>
-    
-    <!-- Facebook -->
-    <a href="#" class="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center hover:bg-blue-700 transition-all duration-300 transform hover:scale-110 shadow-lg">
-        <i class="fab fa-facebook-f text-xl"></i>
-    </a>
-    
-    <!-- Twitter -->
-    <a href="#" class="w-12 h-12 bg-sky-500 text-white rounded-full flex items-center justify-center hover:bg-sky-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
-        <i class="fab fa-twitter text-xl"></i>
-    </a>
-    
-    <!-- TikTok -->
-    <a href="#" class="w-12 h-12 bg-black text-white rounded-full flex items-center justify-center hover:bg-gray-800 transition-all duration-300 transform hover:scale-110 shadow-lg">
-        <i class="fab fa-tiktok text-xl"></i>
-    </a>
+    <!-- Fallback icons if no data in database -->
+    @if($sidebarSocialLinks->isEmpty())
+        <!-- WhatsApp -->
+        <a href="https://wa.me/201234567890?text={{ app()->getLocale() == 'ar' ? 'أريد استفسار' : 'I have a question' }}" target="_blank" class="w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+            <i class="fab fa-whatsapp text-xl"></i>
+        </a>
+        
+        <!-- Phone -->
+        <a href="tel:+966500000000" class="w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+            <i class="fas fa-phone text-xl"></i>
+        </a>
+        
+        <!-- Instagram -->
+        <a href="https://instagram.com/eventtime" target="_blank" class="w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+            <i class="fab fa-instagram text-xl"></i>
+        </a>
+        
+        <!-- Facebook -->
+        <a href="https://facebook.com/eventtime" target="_blank" class="w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+            <i class="fab fa-facebook-f text-xl"></i>
+        </a>
+        
+        <!-- Twitter -->
+        <a href="https://twitter.com/eventtime" target="_blank" class="w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+            <i class="fab fa-twitter text-xl"></i>
+        </a>
+        
+        <!-- TikTok -->
+        <a href="https://tiktok.com/@eventtime" target="_blank" class="w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+            <i class="fab fa-tiktok text-xl"></i>
+        </a>
+        
+        <!-- Snapchat -->
+        <a href="https://snapchat.com/eventtime" target="_blank" class="w-12 h-12 bg-yellow-500 text-white rounded-full flex items-center justify-center hover:bg-yellow-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+            <i class="fab fa-snapchat-ghost text-xl"></i>
+        </a>
+    @endif
 </div>

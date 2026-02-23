@@ -23,75 +23,69 @@
                     @endphp
                     
                     @foreach($sidebarSocialLinks as $social)
-                        @if ($social->name == 'whatsapp')
-                            <!-- WhatsApp -->
-                        <a href="https://wa.me/201234567890?text={{ app()->getLocale() == 'ar' ? 'أريد استفسار' : 'I have a question' }}" target="_blank" class="w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
-                            <i class="fab fa-whatsapp text-xl"></i>
-                        </a>
-                        @endif
+                               @if ($social->name == 'whatsapp')
+                               <!-- WhatsApp -->
+                            <a href="https://wa.me/201234567890?text={{ app()->getLocale() == 'ar' ? 'أريد استفسار' : 'I have a question' }}" target="_blank" class="w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </a>
+                            @endif
 
-                        @if ($social->name == 'phone')
-                        <!-- Phone -->
-                        <a href="tel:+966500000000" class="w-12 h-12 bg-blue-800 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
-                            <i class="fas fa-phone text-xl"></i>
-                        </a>
-                        @endif
-                        
-                        @if ($social->name == 'instagram')
-                        <!-- Instagram -->
-                        <a href="
+                            @if ($social->name == 'phone')
+                            <!-- Phone -->
+                            <a href="tel:+966500000000" class="w-12 h-12 bg-blue-800 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                                <i class="fas fa-phone text-xl"></i>
+                            </a>
+                            @endif
+                            
+                            @if ($social->name == 'instagram')
+                            <!-- Instagram -->
+                                @php
+                                    $url = \App\Models\SocialMedia::where('name', 'instagram')->first()->url ?? '/';
+                                @endphp
+                            <a href="{{ $url }}" target="_blank" class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-700 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            @endif
+                            
+                            @if ($social->name == 'facebook')
+                            <!-- Facebook -->
+                                @php
+                                    $url = \App\Models\SocialMedia::where('name', 'facebook')->first()->url ?? '/';
+                                @endphp
+                            <a href="{{ $url }}" target="_blank" class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                                <i class="fab fa-facebook-f text-xl"></i>
+                            </a>
+                            @endif
+                            
+                            @if ($social->name == 'twitter')
+                            <!-- Twitter -->
                             @php
-                                \App\Models\SocialMedia::where('name', 'instagram')->first()->url ?? '/';
+                                $url = \App\Models\SocialMedia::where('name', 'twitter')->first()->url ?? '/';
                             @endphp
-                        
-                        " target="_blank" class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-700 transition-all duration-300 transform hover:scale-110 shadow-lg">
-                            <i class="fab fa-instagram text-xl"></i>
-                        </a>
-                        @endif
-                        
-                        @if ($social->name == 'facebook')
-                        <!-- Facebook -->
-                        <a href="
-                            @php
-                                \App\Models\SocialMedia::where('name', 'facebook')->first()->url ?? '/';
-                            @endphp
-                        " target="_blank" class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
-                            <i class="fab fa-facebook-f text-xl"></i>
-                        </a>
-                        @endif
-                        
-                        @if ($social->name == 'twitter')
-                        <!-- Twitter -->
-                        <a href="
-                            @php
-                                \App\Models\SocialMedia::where('name', 'twitter')->first()->url ?? '/';
-                            @endphp
-                        " target="_blank" class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
-                            <i class="fab fa-twitter text-xl"></i>
-                        </a>
-                        @endif
-                        
-                        @if ($social->name == 'tiktok')
-                        <!-- TikTok -->
-                        <a href="
-                            @php
-                                \App\Models\SocialMedia::where('name', 'tiktok')->first()->url ?? '/';
-                            @endphp
-                        " target="_blank" class="w-12 h-12 bg-black-500 text-white rounded-full flex items-center justify-center hover:bg-black-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
-                            <i class="fab fa-tiktok text-xl"></i>
-                        </a>
-                        @endif
-                        
-                        @if ($social->name == 'snapchat')
-                        <!-- Snapchat -->
-                        <a href="
-                            @php
-                                \App\Models\SocialMedia::where('name', 'snapchat')->first()->url ?? '/';
-                            @endphp
-                        " target="_blank" class="w-12 h-12 bg-yellow-500 text-white rounded-full flex items-center justify-center hover:bg-yellow-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
-                            <i class="fab fa-snapchat-ghost text-xl"></i>
-                        </a>
-                        @endif
+                            <a href="{{ $url }}" target="_blank" class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                                <i class="fab fa-twitter text-xl"></i>
+                            </a>
+                            @endif
+                            
+                            @if ($social->name == 'tiktok')
+                            <!-- TikTok -->
+                                @php
+                                    $url = \App\Models\SocialMedia::where('name', 'tiktok')->first()->url ?? '/';
+                                @endphp
+                            <a href="{{ $url }}" target="_blank" class="w-12 h-12 bg-black-500 text-white rounded-full flex items-center justify-center hover:bg-black-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                                <i class="fab fa-tiktok text-xl"></i>
+                            </a>
+                            @endif
+                            
+                            @if ($social->name == 'snapchat')
+                            <!-- Snapchat -->
+                                @php
+                                    $url = \App\Models\SocialMedia::where('name', 'snapchat')->first()->url ?? '/';
+                                @endphp
+                            <a href="{{ $url }}" target="_blank" class="w-12 h-12 bg-yellow-500 text-white rounded-full flex items-center justify-center hover:bg-yellow-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                                <i class="fab fa-snapchat-ghost text-xl"></i>
+                            </a>
+                            @endif
 
                     @endforeach
                     
@@ -216,56 +210,50 @@
         
         @if ($social->name == 'instagram')
         <!-- Instagram -->
-        <a href="
-             @php
-                \App\Models\SocialMedia::where('name', 'instagram')->first()->url ?? '/';
+            @php
+                $url = \App\Models\SocialMedia::where('name', 'instagram')->first()->url ?? '/';
             @endphp
-        
-        " target="_blank" class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-700 transition-all duration-300 transform hover:scale-110 shadow-lg">
+        <a href="{{ $url }}" target="_blank" class="w-12 h-12 bg-red-600 text-white rounded-full flex items-center justify-center hover:bg-red-700 transition-all duration-300 transform hover:scale-110 shadow-lg">
             <i class="fab fa-instagram text-xl"></i>
         </a>
         @endif
         
         @if ($social->name == 'facebook')
         <!-- Facebook -->
-        <a href="
-              @php
-                \App\Models\SocialMedia::where('name', 'facebook')->first()->url ?? '/';
+            @php
+                $url = \App\Models\SocialMedia::where('name', 'facebook')->first()->url ?? '/';
             @endphp
-        " target="_blank" class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+        <a href="{{ $url }}" target="_blank" class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
             <i class="fab fa-facebook-f text-xl"></i>
         </a>
         @endif
         
         @if ($social->name == 'twitter')
         <!-- Twitter -->
-        <a href="
-              @php
-                \App\Models\SocialMedia::where('name', 'twitter')->first()->url ?? '/';
-            @endphp
-        " target="_blank" class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+        @php
+            $url = \App\Models\SocialMedia::where('name', 'twitter')->first()->url ?? '/';
+        @endphp
+        <a href="{{ $url }}" target="_blank" class="w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center hover:bg-blue-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
             <i class="fab fa-twitter text-xl"></i>
         </a>
         @endif
         
         @if ($social->name == 'tiktok')
         <!-- TikTok -->
-        <a href="
             @php
-                \App\Models\SocialMedia::where('name', 'tiktok')->first()->url ?? '/';
+                $url = \App\Models\SocialMedia::where('name', 'tiktok')->first()->url ?? '/';
             @endphp
-        " target="_blank" class="w-12 h-12 bg-black-500 text-white rounded-full flex items-center justify-center hover:bg-black-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+        <a href="{{ $url }}" target="_blank" class="w-12 h-12 bg-black-500 text-white rounded-full flex items-center justify-center hover:bg-black-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
             <i class="fab fa-tiktok text-xl"></i>
         </a>
         @endif
         
         @if ($social->name == 'snapchat')
         <!-- Snapchat -->
-        <a href="
             @php
-                \App\Models\SocialMedia::where('name', 'snapchat')->first()->url ?? '/';
+                $url = \App\Models\SocialMedia::where('name', 'snapchat')->first()->url ?? '/';
             @endphp
-        " target="_blank" class="w-12 h-12 bg-yellow-500 text-white rounded-full flex items-center justify-center hover:bg-yellow-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+        <a href="{{ $url }}" target="_blank" class="w-12 h-12 bg-yellow-500 text-white rounded-full flex items-center justify-center hover:bg-yellow-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
             <i class="fab fa-snapchat-ghost text-xl"></i>
         </a>
         @endif

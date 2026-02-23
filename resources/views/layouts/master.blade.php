@@ -92,12 +92,12 @@
     <!-- Footer -->
     @include('partials.footer')
     
-    <!-- Social Media Toggle Button -->
+    {{-- <!-- Social Media Toggle Button -->
     <button id="social-toggle" class="fixed left-4 top-4 bg-gray-800 text-white p-3 rounded-full shadow-lg z-[9998] hover:bg-gray-700 transition-all duration-300 transform hover:scale-110" style="position: fixed !important; left: 0.5rem !important; top: 14rem !important; z-index: 9998 !important;">
         <i class="fas fa-times text-lg"></i>
-    </button>
+    </button> --}}
     
-    <!-- Social Media Sidebar -->
+    {{-- <!-- Social Media Sidebar -->
     <div id="social-sidebar" class="fixed left-4 top-1/2 transform -translate-y-1/2 z-[9999] !important flex flex-col space-y-4 {{ app()->getLocale() === 'ar' ? 'space-y-reverse' : '' }} bg-gradient-to-br from-black via-gray-900 to-black  rounded-3xl p-6 shadow-2xl min-w-[180px] transition-all duration-500" style="position: fixed !important; left: -1rem !important; top: 16rem !important; z-index: 9999 !important; opacity: 1;" onmouseenter="this.style.opacity='1'; this.style.transition='opacity 0.5s'" onmouseleave="this.style.opacity='0'; this.style.transition='opacity 0.5s'">
         
         <!-- WhatsApp -->
@@ -129,7 +129,7 @@
         <a href="#" class="w-12 h-12 bg-black text-white rounded-2xl flex items-center justify-center hover:bg-gray-800 transition-all duration-300 transform hover:scale-110 shadow-2xl group relative overflow-hidden" onclick="window.open('https://tiktok.com/@yourprofile', '_blank')" onmouseenter="this.querySelector('#social-sidebar .fa-tiktok').style.transform='rotate(15deg) scale(1.2)'" onmouseleave="this.querySelector('#social-sidebar .fa-tiktok').style.transform='rotate(0deg) scale(1)'">
             <i class="fab fa-tiktok text-lg group-hover:rotate-12 transition-transform duration-300 relative z-10"></i>    
         </a>
-    </div>
+    </div> --}}
     
     <!-- Notification Container -->
     <div id="notification-container" class="fixed top-4 right-4 z-[10000] pointer-events-none"></div>

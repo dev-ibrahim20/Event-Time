@@ -13,4 +13,6 @@ class ServiceModelService
             app(StoreServiceAction::class)->execute($data);
         });
     }
+
+
 }

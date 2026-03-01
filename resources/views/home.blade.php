@@ -357,7 +357,7 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-20 bg-gradient-to-r from-red-600 to-red-800 text-white">
+<section class="py-20 bg-gradient-to-r from-red-600 to-red-800 text-white" style="background: linear-gradient(135deg, #C0C0C0 0%, #808080 35%, #696969 65%, #2F4F4F 100%);">
     <div class="container mx-auto px-4 text-center">
         <div class="max-w-3xl mx-auto" data-aos="fade-up">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">

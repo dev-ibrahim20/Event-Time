@@ -256,7 +256,7 @@
 @endif
 
 <!-- CTA Section -->
-<section class="py-20 bg-gradient-to-r from-red-600 to-red-800 text-white">
+<section class="py-20 bg-gradient-to-r from-red-600 to-red-800 text-white" style="background: linear-gradient(135deg, #C0C0C0 0%, #808080 35%, #696969 65%, #2F4F4F 100%);">
     <div class="container mx-auto px-4 text-center">
         <div class="max-w-3xl mx-auto" data-aos="fade-up">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">
@@ -266,11 +266,11 @@
                 {{ app()->getLocale() == 'ar' ? 'تواصل معنا الآن واحصل على استشارة مجانية وعرض سعر خاص' : 'Contact us now and get a free consultation and special quote' }}
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="https://wa.me/201234567890?text={{ app()->getLocale() == 'ar' ? 'أريد طلب عرض سعر' : 'I want to request a quote' }}" target="_blank" class="bg-green-500 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-green-600 transition-all duration-300 transform hover:scale-105 shadow-xl">
+                <a href="https://wa.me/201234567890?text={{ app()->getLocale() == 'ar' ? 'أريد طلب عرض سعر' : 'I want to request a quote' }}" target="_blank" class="bg-green-500 text-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-green-600 transition-all duration-300 transform hover:scale-105 shadow-xl" style="background: linear-gradient(135deg, #C0C0C0 0%, #808080 35%, #696969 65%, #2F4F4F 100%);">
                     <i class="fab fa-whatsapp ml-2"></i>
-                    {{ app()->getLocale() == 'ar' ? 'تواصل عبر واتس앱' : 'Contact via WhatsApp' }}
+                    {{ app()->getLocale() == 'ar' ? 'تواصل عبر واتسآب' : 'Contact via WhatsApp' }}
                 </a>
-                <a href="tel:+966500000000" class="bg-white/20 backdrop-blur-md text-white border-2 border-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-white hover:text-red-600 transition-all duration-300 transform hover:scale-105">
+                <a href="tel:+966500000000" class="bg-white/20 backdrop-blur-md text-white border-2 border-white px-8 py-4 rounded-lg text-lg font-bold hover:bg-white hover:text-red-600 transition-all duration-300 transform hover:scale-105" style="background: linear-gradient(135deg, #C0C0C0 0%, #808080 35%, #696969 65%, #2F4F4F 100%);">
                     <i class="fas fa-phone ml-2"></i>
                     {{ app()->getLocale() == 'ar' ? 'اتصال سريع' : 'Quick Call' }}
                 </a>

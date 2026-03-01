@@ -33,8 +33,20 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
         <xhtml:link rel="alternate" hreflang="ar" href="{{ url('/gallery') }}"/>
         <xhtml:link rel="alternate" hreflang="en" href="{{ url('/gallery?lang=en') }}"/>
     </url>
+
+
+    {{-- Products Page --}}
+
+    <url> 
+        <loc>{{ url('/products') }}</loc>
+        <lastmod>{{ date('Y-m-d') }}</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.8</priority>
+        <xhtml:link rel="alternate" hreflang="ar" href="{{ url('/products') }}"/>
+        <xhtml:link rel="alternate" hreflang="en" href="{{ url('/products?lang=en') }}"/>
+    </url>
     
-    <!-- Quote Page -->
+    {{-- <!-- Quote Page -->
     <url>
         <loc>{{ url('/quote') }}</loc>
         <lastmod>{{ date('Y-m-d') }}</lastmod>
@@ -42,7 +54,7 @@ echo '<?xml version="1.0" encoding="UTF-8"?>';
         <priority>0.7</priority>
         <xhtml:link rel="alternate" hreflang="ar" href="{{ url('/quote') }}"/>
         <xhtml:link rel="alternate" hreflang="en" href="{{ url('/quote?lang=en') }}"/>
-    </url>
+    </url> --}}
     
     <!-- Contact Page -->
     <url>

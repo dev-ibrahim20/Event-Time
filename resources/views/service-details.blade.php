@@ -4,7 +4,7 @@
     
 @section('content')
 <!-- Hero Section -->
-<section class="relative py-20 overflow-hidden" id="heroSection" style="background-color: #7fa5ef;">
+<section class="relative py-20 overflow-hidden" id="heroSection" style="background: linear-gradient(135deg, #C0C0C0 0%, #808080 35%, #696969 65%, #2F4F4F 100%);">
     <!-- Hero Background Image -->
     <div class="absolute inset-0">
         <img src="{{ isset($service->image) ? asset('storage/' . $service->image) : 'https://picsum.photos/1920/600?random=hero' }}" 

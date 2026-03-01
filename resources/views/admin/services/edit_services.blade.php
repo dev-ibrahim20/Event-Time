@@ -15,7 +15,7 @@ Dashboard - Edit Service
         box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
     .gallery-preview {
-        display: flex;
+        display: `lex;
         flex-wrap: wrap;
         gap: 10px;
         margin-top: 10px;

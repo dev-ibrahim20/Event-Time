@@ -3,7 +3,7 @@
     /* Customers Slider Section */
     .customers-section {
         padding: 40px 0;
-        background: linear-gradient(135deg, #d7d7d7 0%, #4b4b33 50%, #5e5e50 100%);
+        background: linear-gradient(135deg, #C0C0C0 0%, #808080 35%, #696969 65%, #2F4F4F 100%);
         overflow: hidden;
         position: relative;
         width: 100%;
@@ -121,8 +121,8 @@
 <section class="customers-section" id="customers">
     <div class="customers-container">
         <div class="section-header">
-            <h2>{{ __('messages.customers_title') }}</h2>
-            <p>{{ __('messages.customers_subtitle') }}</p>
+            <h2>{{ app()->getLocale() == 'ar' ? 'شركائنا' : 'Our Partners' }}</h2>
+            <p>{{ app()->getLocale() == 'ar' ? 'انضم الى شركائنا' : 'Join Our Partners' }}</p>
         </div>
         
         <div class="customers-slider">

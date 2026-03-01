@@ -37,7 +37,7 @@
 
 @section('content')
 <!-- Hero Section -->
-<section class="relative py-20 bg-gradient-to-br from-red-600 to-red-800 text-white overflow-hidden">
+<section class="relative py-20 bg-gradient-to-br from-red-600 to-red-800 text-white overflow-hidden" style="background: linear-gradient(135deg, #C0C0C0 0%, #808080 35%, #696969 65%, #2F4F4F 100%);">
     <div class="absolute inset-0 bg-black opacity-20"></div>
     <div class="container mx-auto px-4 relative z-10">
         <div class="text-center" data-aos="fade-up">

@@ -56,6 +56,26 @@ class ServicesController extends Controller
     public function edit(string $id)
     {
         $service = Service::findOrFail($id);
+        
+        // Prepare features for display
+        if (is_string($service->features_ar)) {
+            $decoded = json_decode($service->features_ar, true);
+            $service->features_ar_display = is_array($decoded) ? implode(', ', $decoded) : $service->features_ar;
+        } elseif (is_array($service->features_ar)) {
+            $service->features_ar_display = implode(', ', $service->features_ar);
+        } else {
+            $service->features_ar_display = '';
+        }
+        
+        if (is_string($service->features_en)) {
+            $decoded = json_decode($service->features_en, true);
+            $service->features_en_display = is_array($decoded) ? implode(', ', $decoded) : $service->features_en;
+        } elseif (is_array($service->features_en)) {
+            $service->features_en_display = implode(', ', $service->features_en);
+        } else {
+            $service->features_en_display = '';
+        }
+        
         return view('admin.services.edit_services', compact('service'));
     }
 

@@ -87,7 +87,7 @@
                                                             <td>{{$loop->iteration}}</td>
                                                             <td>
                                                                 @if($service->image)
-                                                                    <img src="{{ asset($service->image) }}" alt="{{ $service->title_ar }}" 
+                                                                    <img src="{{ asset(path: $service->image) }}" alt="{{ $service->title_ar }}" 
                                                                          style="width: 80px; height: 80px; object-fit: cover; border-radius: 8px; cursor: pointer;"
                                                                          onclick="openImageModal('{{ asset($service->image) }}', '{{ $service->title_ar }}')"
                                                                          class="service-image">
@@ -112,8 +112,10 @@
                                                                     @php
                                                                         $features = json_decode($service->features_ar);
                                                                         if(is_array($features)) {
-                                                                            echo implode(', ', array_slice($features, 0, 2));
-                                                                            if(count($features) > 2) echo '...';
+                                                                            foreach(array_slice($features, 0, 3) as $feature) {
+                                                                                echo '<span class="badge badge-info ml-1">' . e($feature) . '</span>';
+                                                                            }
+                                                                            if(count($features) > 3) echo '<span class="badge badge-secondary ml-1">+' . (count($features) - 3) . '</span>';
                                                                         }
                                                                     @endphp
                                                                 @endif

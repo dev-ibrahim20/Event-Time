@@ -153,14 +153,14 @@ Dashboard - Edit Service
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="features_ar" class="form-label">المميزات بالعربي <span class="text-danger">*</span></label>
-                                    <textarea class="form-control" id="features_ar" name="features_ar" rows="3" required>{{ old('features_ar', is_array($service->features_ar) ? implode(', ', $service->features_ar) : $service->features_ar) }}</textarea>
+                                    <textarea class="form-control" id="features_ar" name="features_ar" rows="3" required>{{ old('features_ar', $service->features_ar_display) }}</textarea>
                                     <small class="form-text text-muted">افصل بين كل مميزة بفاصلة</small>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="features_en" class="form-label">المميزات بالإنجليزي <span class="text-danger">*</span></label>
-                                    <textarea class="form-control" id="features_en" name="features_en" rows="3" required>{{ old('features_en', is_array($service->features_en) ? implode(', ', $service->features_en) : $service->features_en) }}</textarea>
+                                    <textarea class="form-control" id="features_en" name="features_en" rows="3" required>{{ old('features_en', $service->features_en_display) }}</textarea>
                                     <small class="form-text text-muted">Separate each feature with a comma</small>
                                 </div>
                             </div>

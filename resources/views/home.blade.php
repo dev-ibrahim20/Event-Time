@@ -42,7 +42,7 @@
             <source src="{{ asset('assets/videos/events-hero.mp4') }}" type="video/mp4">
             <source src="{{ asset('assets/videos/hero-video.mp4') }}" type="video/mp4">
         </video> --}}
-        <img src="{{ asset('assets/images/11.jpeg') }}" alt="وقت الحدث" class="w-full h-full object-cover">
+        <img src="{{ asset('assets/images/1234.jpeg') }}" alt="وقت الحدث" class="w-full h-full object-cover">
     </div>
     <div class="hero-overlay"></div>
     
@@ -293,9 +293,9 @@
 <section class="relative py-20 lg:py-32 bg-gradient-to-br from-red-600 to-red-800 text-white overflow-hidden">
     <!-- Background Image -->
     <div class="absolute inset-0">
-        <img src="https://picsum.photos/seed/event-management/1920/1080.jpg" 
+        <img src="{{ asset('assets/images/1234.jpeg') }}" 
              alt="Event Management Background" 
-             class="w-full h-full object-cover opacity-20">
+             class="w-full h-full object-cover">
     </div>
     
     <!-- Overlay Gradient -->
@@ -318,7 +318,7 @@
                 {{ app()->getLocale() == 'ar' ? 'نحول أفكاركم إلى فعاليات لا تُنسى' : 'We Transform Your Ideas into Unforgettable Events' }}
             </h1>
             
-            <p class="text-xl md:text-2xl text-red-100 max-w-4xl mx-auto leading-relaxed mb-12">
+            <p class="text-xl container  md:text-2xl text-blue-100 max-w-4xl mx-auto leading-relaxed mb-12">
                 {{ app()->getLocale() == 'ar' ? 'منظمتكم المتخصصة في تنظيم وتجهيز الفعاليات والمؤتمرات والحفلات بأعلى معايير الجودة والاحترافية' : 'Your specialized organization in event management, conferences, and parties with the highest standards of quality and professionalism' }}
             </p>
             
@@ -327,7 +327,7 @@
                     <i class="fab fa-whatsapp mr-3"></i>
                     {{ app()->getLocale() == 'ar' ? 'تواصل واتساب' : 'Contact WhatsApp' }}
                 </a> --}}
-                <a href="{{ route('products.index') }}" class="bg-transparent text-white px-8 py-4 rounded-xl text-lg font-bold border-2 border-white hover:bg-white hover:text-red-600 transition-all duration-300 transform hover:scale-105 flex items-center">
+                <a href="{{ route('products.index') }}" class="bg-white text-red-600 px-8 py-4 rounded-xl text-lg font-bold border-2 border-white hover:bg-white hover:text-red-600 transition-all duration-300 transform hover:scale-105 flex items-center">
                     <i class="fas fa-shopping-bag mr-3"></i>
                     {{ app()->getLocale() == 'ar' ? 'استكشف منتجاتنا' : 'Explore Our Products' }}
                 </a>
@@ -357,7 +357,7 @@
 </section>
 
 <!-- CTA Section -->
-<section class="py-20 bg-gradient-to-r from-red-600 to-red-800 text-white" style="background: linear-gradient(135deg, #C0C0C0 0%, #808080 35%, #696969 65%, #2F4F4F 100%);">
+<section class="py-20 bg-gradient-to-r from-red-600 to-red-800 text-white" style="background: linear-gradient(135deg, #ab010f, #4c5a69, #3804c5 80%);">
     <div class="container mx-auto px-4 text-center">
         <div class="max-w-3xl mx-auto" data-aos="fade-up">
             <h2 class="text-3xl md:text-4xl font-bold mb-6">

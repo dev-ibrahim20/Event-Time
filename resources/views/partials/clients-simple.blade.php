@@ -3,7 +3,7 @@
     /* Customers Slider Section */
     .customers-section {
         padding: 40px 0;
-        background: linear-gradient(135deg, #C0C0C0 0%, #808080 35%, #696969 65%, #2F4F4F 100%);
+        background: linear-gradient(135deg, #ab010f, #4c5a69, #3804c5 80%);    
         overflow: hidden;
         position: relative;
         width: 100%;

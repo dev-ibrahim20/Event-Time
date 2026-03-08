@@ -1,79 +1,67 @@
 @php
 echo '<?xml version="1.0" encoding="UTF-8"?>';
 @endphp
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1" xmlns:xhtml="https://eventtimesa.com/event/public/assets/images/logo-even.jpeg">
     
     <!-- Homepage -->
     <url>
-        <loc>{{ url('/') }}</loc>
-        <lastmod>{{ date('Y-m-d') }}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-        <xhtml:link rel="alternate" hreflang="ar" href="{{ url('/') }}"/>
-        <xhtml:link rel="alternate" hreflang="en" href="{{ url('/?lang=en') }}"/>
+        <loc>https://eventtimesa.com</loc>
+        <lastmod>2023-04-24T12:45:21+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
     </url>
     
     <!-- Services Page -->
     <url>
-        <loc>{{ url('/services') }}</loc>
-        <lastmod>{{ date('Y-m-d') }}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-        <xhtml:link rel="alternate" hreflang="ar" href="{{ url('/services') }}"/>
-        <xhtml:link rel="alternate" hreflang="en" href="{{ url('/services?lang=en') }}"/>
+        <loc>https://eventtimesa.com/services</loc>
+        <lastmod>2023-04-24T12:45:21+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
     </url>
+    
+    <!-- Service Detail Pages -->
+    @php
+        $services = \App\Models\Service::where('status', true)->get();
+    @endphp
+    @foreach($services as $service)
+    <url>
+        <loc>{{ url('/service-details/' . $service->slug) }}</loc>
+        <lastmod>2023-04-24T12:45:21+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
+    @endforeach
     
     <!-- Gallery Page -->
     <url>
-        <loc>{{ url('/gallery') }}</loc>
-        <lastmod>{{ date('Y-m-d') }}</lastmod>
-        <changefreq>weekly</changefreq>
+        <loc>https://eventtimesa.com/gallery</loc>
+        <lastmod>2023-04-24T12:45:21+00:00</lastmod>
+        <changefreq>daily</changefreq>
         <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="ar" href="{{ url('/gallery') }}"/>
-        <xhtml:link rel="alternate" hreflang="en" href="{{ url('/gallery?lang=en') }}"/>
-    </url>
-
-
-    {{-- Products Page --}}
-
-    <url> 
-        <loc>{{ url('/products') }}</loc>
-        <lastmod>{{ date('Y-m-d') }}</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.8</priority>
-        <xhtml:link rel="alternate" hreflang="ar" href="{{ url('/products') }}"/>
-        <xhtml:link rel="alternate" hreflang="en" href="{{ url('/products?lang=en') }}"/>
     </url>
     
-    {{-- <!-- Quote Page -->
+    <!-- Products Page -->
     <url>
-        <loc>{{ url('/quote') }}</loc>
-        <lastmod>{{ date('Y-m-d') }}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-        <xhtml:link rel="alternate" hreflang="ar" href="{{ url('/quote') }}"/>
-        <xhtml:link rel="alternate" hreflang="en" href="{{ url('/quote?lang=en') }}"/>
-    </url> --}}
+        <loc>https://eventtimesa.com/products</loc>
+        <lastmod>2023-04-24T12:45:21+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
+    </url>
     
     <!-- Contact Page -->
     <url>
-        <loc>{{ url('/contact') }}</loc>
-        <lastmod>{{ date('Y-m-d') }}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-        <xhtml:link rel="alternate" hreflang="ar" href="{{ url('/contact') }}"/>
-        <xhtml:link rel="alternate" hreflang="en" href="{{ url('/contact?lang=en') }}"/>
+        <loc>https://eventtimesa.com/contact</loc>
+        <lastmod>2023-04-24T12:45:21+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
     </url>
     
     <!-- About Page -->
     <url>
-        <loc>{{ url('/about') }}</loc>
-        <lastmod>{{ date('Y-m-d') }}</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-        <xhtml:link rel="alternate" hreflang="ar" href="{{ url('/about') }}"/>
-        <xhtml:link rel="alternate" hreflang="en" href="{{ url('/about?lang=en') }}"/>
+        <loc>https://eventtimesa.com/about</loc>
+        <lastmod>2023-04-24T12:45:21+00:00</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.8</priority>
     </url>
     
 </urlset>

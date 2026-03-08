@@ -4,7 +4,7 @@
 
 @section('content')
 <!-- Modern Hero Section -->
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden" style="background: linear-gradient(135deg, #ab010f, #4c5a69, #3804c5 80%);">
     <!-- Animated Background -->
     <div class="absolute inset-0 bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900">
         <div class="absolute inset-0 bg-black/30"></div>
@@ -19,7 +19,7 @@
     </div>
     
     <!-- Hero Content -->
-    <div class="relative z-10 text-center px-4">
+    <div class="relative z-10 text-center px-4" style="background: linear-gradient(135deg, #ab010f, #4c5a69, #0e586f);">
         <div class="max-w-5xl mx-auto">
             <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white mb-6 tracking-tight" data-aos="fade-up" data-aos-duration="1000">
                 <span class="bg-gradient-to-r from-yellow-400 via-pink-500 to-purple-600 bg-clip-text text-transparent animate-gradient">
@@ -54,7 +54,7 @@
 </section>
 
 <!-- Modern Filter Section -->
-<section class="py-16 bg-gradient-to-r from-gray-900 via-purple-900 to-gray-900 sticky top-0 z-40 backdrop-blur-lg border-b border-purple-500/20">
+<section class="py-16 bg-gradient-to-r sticky top-0 z-40" style="background: linear-gradient(135deg, #ab010f, #4c5a69, #3804c5 80%);">
     <div class="container mx-auto px-4">
         <div class="flex flex-wrap justify-center items-center gap-4">
             <div class="flex flex-wrap gap-3 justify-center">
@@ -86,7 +86,7 @@
 </section>
 
 <!-- Stunning Gallery Section -->
-<section id="gallery-section" class="py-20 bg-gradient-to-br from-gray-900 via-purple-900/20 to-gray-900">
+<section id="gallery-section" class="py-20 bg-gradient-to-br" style="background: linear-gradient(135deg, #ab010f, #4c5a69, #0e586f);">
     <div class="container mx-auto px-4">
         
         <!-- Images Gallery -->

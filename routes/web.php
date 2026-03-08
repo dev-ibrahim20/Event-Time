@@ -45,47 +45,42 @@ Route::get('language/{locale}', function ($locale) {
 })->name('language.switch');
 
 // Frontend Routes
-    Route::get('services', function () {
-        return view('services');
-    })->name('services');
-    
-    Route::get('about', function () {
-        return view('about');
-    })->name('about');
-    
-    Route::get('contact', function () {
-        return view('contact');
-    })->name('contact');
+Route::get('services', function () {
+    return view('services');
+})->name('services');
 
-    Route::post('contact', [ContactMessagesController::class, 'store'])->name('contact.submit');
-    
-    Route::get('gallery', function () {
-        return view('gallery');
-    })->name('gallery');
+Route::get('about', function () {
+    return view('about');
+})->name('about');
 
-    // Route::get('quote', [QuoteRequestsController::class, 'create'])->name('quote');
-    
-    Route::get('service-details/{service}', function ($service) {
-        $service = \App\Models\Service::where('slug', $service)->first();
-        if (!$service) {
-            abort(404);
-        }
-        return view('service-details', compact('service'));
-    })->name('service-details');
-    
-    // Route::post('quote-request', [QuoteRequestsController::class, 'store'])->name('quote-request.submit');
+Route::get('contact', function () {
+    return view('contact');
+})->name('contact');
 
-    // Route::post('api/quote-request', [QuoteRequestsController::class, 'store']);
+Route::post('contact', [ContactMessagesController::class, 'store'])->name('contact.submit');
 
-    // Products Routes
-    Route::get('products', [FrontendProductsController::class, 'index'])->name('products.index');
-    Route::get('products/{slug}', [FrontendProductsController::class, 'show'])->name('products.show');
+Route::get('gallery', function () {
+    return view('gallery');
+})->name('gallery');
+
+// Route::get('quote', [QuoteRequestsController::class, 'create'])->name('quote');
+
+Route::get('service-details/{service}', function ($service) {
+    $service = \App\Models\Service::where('slug', $service)->first();
+    if (!$service) {
+        abort(404);
+    }
+    return view('service-details', compact('service'));
+})->name('service-details');
+// Products Routes
+Route::get('products', [FrontendProductsController::class, 'index'])->name('products.index');
+Route::get('products/{slug}', [FrontendProductsController::class, 'show'])->name('products.show');
 
 
 
-// Route::get('www', function() {
-//     return view('muhaya-fixed');
-// });
+Route::get('/sitemap.xml', function (Request $request) {
+    return response()->view('sitemap')->header('Content-Type', 'text/xml');
+});
 
 
 

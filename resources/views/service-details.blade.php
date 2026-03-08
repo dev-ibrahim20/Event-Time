@@ -4,7 +4,7 @@
     
 @section('content')
 <!-- Hero Section -->
-<section class="relative py-20 overflow-hidden" id="heroSection" style="background: linear-gradient(135deg, #C0C0C0 0%, #808080 35%, #696969 65%, #2F4F4F 100%);">
+<section class="relative py-20 overflow-hidden" id="heroSection" style="background: linear-gradient(135deg, #ab010f, #4c5a69, #3804c5 80%);">
     <!-- Hero Background Image -->
     <div class="absolute inset-0">
         <img src="{{ isset($service->image) ? asset('storage/' . $service->image) : 'https://picsum.photos/1920/600?random=hero' }}" 
@@ -106,7 +106,7 @@
     </div>
     
     <!-- Professional Image Gallery -->
-    <div class="w-full bg-gradient-to-br from-gray-900 to-gray-800 py-8" data-aos="fade-up">
+    <div class="w-full bg-gradient-to-br from-gray-900 to-gray-800 py-8" data-aos="fade-up" style="background: linear-gradient(135deg, #ab010f, #4c5a69, #3804c5 80%);">
         <div class="container mx-auto px-4">
             <h2 class="text-3xl font-bold text-white mb-8 text-center">
                 <i class="fas fa-images text-yellow-400 mr-3"></i>
@@ -203,7 +203,7 @@
 @endif
 
 <!-- CTA Section -->
-<section class="py-20 bg-gradient-to-r from-gray-900 to-gray-800">
+<section class="py-20 bg-gradient-to-r from-gray-900 to-gray-800" style="background: linear-gradient(135deg, #ab010f, #4c5a69, #3804c5 80%);">
     <div class="container mx-auto px-4 text-center">
         <div class="max-w-4xl mx-auto" data-aos="zoom-in">
             <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">

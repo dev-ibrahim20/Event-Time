@@ -6,49 +6,190 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     
     <!-- SEO Meta Tags -->
-    <title>@yield('title', 'وقت الحدث - تجهيز المؤتمرات والمعارض والخيام الأوروبية')</title>
+    <title>@yield('title', 'وقت الحدث | تجهيز المؤتمرات والمعارض والخيام الأوروبية | Event Time Saudi Arabia')</title>
     <link rel="icon" type="image/x-icon" href="{{ asset('assets/images/logo-even.jpeg') }}">
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/apple-touch-icon.png') }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/favicon-32x32.png') }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/favicon-16x16.png') }}">
-    <meta name="description" content="@yield('description', 'شركة وقت الحدث الرائدة في تجهيز المؤتمرات والمعارض والخيام الأوروبية بأعلى معايير الجودة والاحترافية في المملكة العربية السعودية')">
-    <meta name="keywords" content="تجهيز مؤتمرات, خيام أوروبية, معارض, حفلات, تجهيز فعاليات, event time, event management, saudi arabia, riyadh">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/logo-even.jpeg') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/images/logo-even.jpeg') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/images/logo-even.jpeg') }}">
+    
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="@yield('description', 'وقت الحدث - الشريك الاستراتيجي الرائد في المملكة العربية السعودية لتجهيز المؤتمرات والمعارض والفعاليات والخيام الأوروبية الفاخرة. نقدم حلولاً متكاملة ومبتكرة للشركات والحكومات والأفراد بأعلى معايير الجودة العالمية. خبرة تزيد عن 10 سنوات في تنظيم الفعاليات الكبرى، مع فريق من المحترفين المتخصصين في إدارة وتنفيذ وتنسيق كل أنواع المناسبات. خدماتنا تشمل: تجهيز قاعات المؤتمرات بأحدث التقنيات، تصميم وبناء المعارض التجارية، تركيب الخيام الأوروبية الفاخرة للزفاف والمناسبات، توفير أنظمة الصوتيات والإضاءة المتطورة، الديكورات الفاخرة، التنسيق الكامل للفعاليات، وتوفير الطاقم المدرب. نغطي جميع المدن السعودية: الرياض، جدة، الدمام، الخبر، مكة المكرمة، المدينة المنورة، وأبها. Event Time - حيث تتحول أحلامك إلى واقع باحترافية وجودة فائقة. اتصل بنا الآن للحصول على استشارة مجانية وعرض سعر خاص.')">
+    <meta name="keywords" content="تجهيز مؤتمرات, خيام أوروبية, معارض, حفلات, تجهيز فعاليات, event time, event management, saudi arabia, riyadh, 
+    تنظيم فعاليات, إدارة المؤتمرات, تنظيم المعارض, خيام فاخرة, خيام افراح, حفلات زفاف, تنظيم حفلات, 
+    conference management, event planning, exhibition setup, luxury tents, wedding tents, party organization, 
+    saudi events, riyadh events, jeddah events, dammam events, khobar events, 
+    مؤتمرات الرياض, معارض جدة, فعاليات الدمام, تنظيم حفلات الخبر, 
+    event services saudi, event management riyadh, luxury tents saudi, conference organizers, 
+    exhibition management, corporate events, wedding planning, party services, 
+    event decoration, event lighting, event sound system, event catering, event venues, 
+    تجهيز قاعات المؤتمرات, ديكور فعاليات, إضاءة فعاليات, صوتيات فعاليات, 
+    catering events, event venues rental, party decoration, wedding planning services, 
+    corporate event management, business conference setup, exhibition booth design, 
+    event production services, event coordination, event logistics, event staff, 
+    إنتاج فعاليات, تنسيق فعاليات, لوجستيات فعاليات, طاقم فعاليات, 
+    event audio visual, event staging, event furniture rental, event transportation, 
+    audio visual services, event staging rental, furniture rental events, event transport services, 
+    خيام اعراس, خيام مناسبات, خيام شركات, خيام حكومية, 
+    marriage tents, event tents, corporate tents, government tents, 
+    تنظيم مناسبات, إدارة مناسبات, تخطيط مناسبات, تنفيذ مناسبات, 
+    occasion planning, event execution, occasion management, event coordination services, 
+    فعاليات الشركات, فعاليات حكومية, فعاليات خاصة, فعاليات عامة, 
+    corporate events, government events, private events, public events, 
+    خدمات التجهيز, خدمات التنظيم, خدمات الديكور, خدمات الصوتيات, 
+    setup services, organization services, decoration services, audio services, 
+    أفضل شركات تنظيم الفعاليات, شركة تنظيم حفلات, شركة تجهيز مؤتمرات, 
+    best event companies, event planning company, conference setup company, 
+    أسعار تنظيم الفعاليات, تكلفة حفلات زفاف, أسعار الخيام الأوروبية, 
+    event prices, wedding costs, european tents prices, 
+    تنظيم فعاليات بالسعودية, شركات تنظيم حفلات الرياض, 
+    saudi event companies, riyadh event planners, jeddah event organizers, 
+    تجهيز مؤتمرات بالرياض, تنظيم معارض بالسعودية, خيام اعراس بالدمام, 
+    riyadh conference setup, saudi exhibition setup, dammam wedding tents">
+    
+    <!-- Author & Publisher -->
     <meta name="author" content="وقت الحدث">
-    <meta name="robots" content="index, follow">
-    <meta name="googlebot" content="index, follow">
+    <meta name="publisher" content="Event Time Saudi Arabia">
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow">
+    
+    <!-- Language & Region -->
     <meta name="language" content="{{ app()->getLocale() }}">
-    <meta name="revisit-after" content="7 days">
     <meta name="geo.region" content="SA">
     <meta name="geo.placename" content="الرياض">
     <meta name="geo.position" content="24.7136;46.6753">
     <meta name="ICBM" content="24.7136,46.6753">
     
+    <!-- Content & Technical -->
+    <meta name="rating" content="general">
+    <meta name="distribution" content="global">
+    <meta name="revisit-after" content="7 days">
+    <meta name="generator" content="Event Time CMS">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="وقت الحدث">
+    
     <!-- Open Graph Meta Tags -->
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="وقت الحدث">
-    <meta property="og:title" content="@yield('og:title', 'وقت الحدث - تجهيز المؤتمرات والمعارض')">
-    <meta property="og:description" content="@yield('og:description', 'شركة رائدة في تجهيز المؤتمرات والمعارض والخيام الأوروبية')">
-    <meta property="og:url" content="{{ url()->current() }}">
-    <meta property="og:image" content="@yield('og-image', asset('assets/images/og-image.jpg')) }}">
+    <meta property="og:title" content="@yield('og:title', 'وقت الحدث | تجهيز المؤتمرات والمعارض والخيام الأوروبية | Event Time Saudi Arabia')">
+    <meta property="og:description" content="@yield('og:description', 'وقت الحدث - الشريك الاستراتيجي الرائد في المملكة العربية السعودية لتجهيز المؤتمرات والمعارض والفعاليات والخيام الأوروبية الفاخرة. نقدم حلولاً متكاملة ومبتكرة للشركات والحكومات والأفراد بأعلى معايير الجودة العالمية.')">
+    <meta property="og:url" content="@yield('og:url', 'https://eventtimesa.com')">
+    <meta property="og:image" content="@yield('og-image', asset('assets/images/logo-even.jpeg'))">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="وقت الحدث - Event Time Saudi Arabia">
     <meta property="og:locale" content="{{ app()->getLocale() === 'ar' ? 'ar_SA' : 'en_US' }}">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="ar_SA">
     
     <!-- Twitter Card Meta Tags -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@eventtime_sa">
     <meta name="twitter:creator" content="@eventtime_sa">
-    <meta name="twitter:title" content="@yield('twitter:title', 'وقت الحدث - تجهيز المؤتمرات والمعارض')">
-    <meta name="twitter:description" content="@yield('twitter:description', 'شركة رائدة في تجهيز المؤتمرات والمعارض والخيام الأوروبية')">
-    <meta name="twitter:image" content="@yield('twitter-image', asset('assets/images/og-image.jpg')) }}">
+    <meta name="twitter:title" content="@yield('twitter:title', 'وقت الحدث | تجهيز المؤتمرات والمعارض والخيام الأوروبية | Event Time Saudi Arabia')">
+    <meta name="twitter:description" content="@yield('twitter:description', 'وقت الحدث - الشريك الاستراتيجي الرائد في المملكة العربية السعودية لتجهيز المؤتمرات والمعارض والفعاليات والخيام الأوروبية الفاخرة. نقدم حلولاً متكاملة ومبتكرة للشركات والحكومات والأفراد.')">
+    <meta name="twitter:image" content="@yield('twitter-image', asset('assets/images/logo-even.jpeg'))">
+    <meta name="twitter:image:alt" content="وقت الحدث - Event Time Saudi Arabia">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="category" content="business,event management,conference services">
+    <meta name="coverage" content="worldwide">
+    <meta name="target" content="all">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="width">
     
     <!-- Canonical URL -->
-    <link rel="canonical" href="{{ url()->current() }}">
+    <link rel="canonical" href="https://eventtimesa.com">
     
     <!-- Alternate Language Links -->
-    <link rel="alternate" hreflang="ar" href="{{ url()->current() }}">
-    <link rel="alternate" hreflang="en" href="{{ url()->current() }}?lang=en">
-    <link rel="alternate" hreflang="x-default" href="{{ url()->current() }}">
+    <link rel="alternate" hreflang="ar" href="https://eventtimesa.com">
+    <link rel="alternate" hreflang="en" href="https://eventtimesa.com?lang=en">
+    <link rel="alternate" hreflang="x-default" href="https://eventtimesa.com">
+    
+    <!-- DNS Prefetch -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    <link rel="dns-prefetch" href="//fonts.gstatic.com">
+    <link rel="dns-prefetch" href="//www.google-analytics.com">
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    
+    <!-- Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "وقت الحدث",
+        "alternateName": "Event Time Saudi Arabia",
+        "url": "https://eventtimesa.com",
+        "logo": "https://eventtimesa.com/assets/images/logo-even.jpeg",
+        "description": "الشريك الاستراتيجي الرائد في المملكة العربية السعودية لتجهيز المؤتمرات والمعارض والفعاليات والخيام الأوروبية الفاخرة",
+        "foundingDate": "2014",
+        "areaServed": "SA",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "حي النخيل، الرياض",
+            "addressLocality": "الرياض",
+            "addressRegion": "الرياض",
+            "postalCode": "11564",
+            "addressCountry": "SA"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "24.7136",
+            "longitude": "46.6753"
+        },
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+966570723038",
+            "contactType": "customer service",
+            "availableLanguage": ["Arabic", "English"],
+            "hoursAvailable": "Mo-Su 00:00-23:59"
+        },
+        "sameAs": [
+            "https://www.facebook.com/eventtimesa",
+            "https://www.twitter.com/eventtime_sa",
+            "https://www.instagram.com/eventtime_sa",
+            "https://www.linkedin.com/company/eventtime-sa"
+        ],
+        "serviceType": "Event Management Services",
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Event Services",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "تجهيز المؤتمرات",
+                        "description": "Conference setup and management services"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "الخيام الأوروبية",
+                        "description": "European luxury tents setup"
+                    }
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Service",
+                        "name": "تنظيم المعارض",
+                        "description": "Exhibition setup and management"
+                    }
+                }
+            ]
+        }
+    }
+    </script>
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -121,45 +262,6 @@
     
     <!-- Footer -->
     @include('partials.footer')
-    
-    {{-- <!-- Social Media Toggle Button -->
-    <button id="social-toggle" class="fixed left-4 top-4 bg-gray-800 text-white p-3 rounded-full shadow-lg z-[9998] hover:bg-gray-700 transition-all duration-300 transform hover:scale-110" style="position: fixed !important; left: 0.5rem !important; top: 14rem !important; z-index: 9998 !important;">
-        <i class="fas fa-times text-lg"></i>
-    </button> --}}
-    
-    {{-- <!-- Social Media Sidebar -->
-    <div id="social-sidebar" class="fixed left-4 top-1/2 transform -translate-y-1/2 z-[9999] !important flex flex-col space-y-4 {{ app()->getLocale() === 'ar' ? 'space-y-reverse' : '' }} bg-gradient-to-br from-black via-gray-900 to-black  rounded-3xl p-6 shadow-2xl min-w-[180px] transition-all duration-500" style="position: fixed !important; left: -1rem !important; top: 16rem !important; z-index: 9999 !important; opacity: 1;" onmouseenter="this.style.opacity='1'; this.style.transition='opacity 0.5s'" onmouseleave="this.style.opacity='0'; this.style.transition='opacity 0.5s'">
-        
-        <!-- WhatsApp -->
-        <a href="https://wa.me/966500000000?text={{ app()->getLocale() == 'ar' ? 'أريد استفسار عن خدماتكم' : 'I want to inquire about your services' }}" target="_blank" class="w-12 h-12 bg-green-600 text-white rounded-2xl flex items-center justify-center hover:bg-green-700 transition-all duration-300 transform hover:scale-110 shadow-2xl group relative overflow-hidden" onclick="window.open('https://wa.me/966500000000?text={{ app()->getLocale() == 'ar' ? 'أريد استفسار عن خدماتكم' : 'I want to inquire about your services' }}', '_blank')" onmouseenter="this.querySelector('#social-sidebar .fa-whatsapp').style.transform='rotate(15deg) scale(1.2)'" onmouseleave="this.querySelector('#social-sidebar .fa-whatsapp').style.transform='rotate(0deg) scale(1)'">
-            <i class="fab fa-whatsapp text-lg group-hover:rotate-12 transition-transform duration-300 relative z-10"></i>    
-        </a>
-        
-        <!-- Phone -->
-        <a href="tel:+966500000000" target="_blank" class="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center hover:bg-blue-700 transition-all duration-300 transform hover:scale-110 shadow-2xl group relative overflow-hidden" onclick="window.open('tel:+966500000000', '_blank')" onmouseenter="this.querySelector('#social-sidebar .fa-phone').style.transform='rotate(15deg) scale(1.2)'" onmouseleave="this.querySelector('#social-sidebar .fa-phone').style.transform='rotate(0deg) scale(1)'">
-            <i class="fas fa-phone text-lg group-hover:rotate-12 transition-transform duration-300 relative z-10"></i>    
-        </a>
-        
-        <!-- Instagram -->
-        <a href="#" class="w-12 h-12 bg-red-600 text-white rounded-2xl flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-2xl group relative overflow-hidden" onclick="window.open('https://instagram.com/yourprofile', '_blank')" onmouseenter="this.querySelector('#social-sidebar .fa-instagram').style.transform='rotate(15deg) scale(1.2)'" onmouseleave="this.querySelector('#social-sidebar .fa-instagram').style.transform='rotate(0deg) scale(1)'">
-            <i class="fab fa-instagram text-lg group-hover:rotate-12 transition-transform duration-300 relative z-10"></i>    
-        </a>
-        
-        <!-- Facebook -->
-        <a href="#" class="w-12 h-12 bg-blue-600 text-white rounded-2xl flex items-center justify-center hover:bg-blue-700 transition-all duration-300 transform hover:scale-110 shadow-2xl group relative overflow-hidden" onclick="window.open('https://facebook.com/yourpage', '_blank')" onmouseenter="this.querySelector('#social-sidebar .fa-facebook-f').style.transform='rotate(15deg) scale(1.2)'" onmouseleave="this.querySelector('#social-sidebar .fa-facebook-f').style.transform='rotate(0deg) scale(1)'">
-            <i class="fab fa-facebook-f text-lg group-hover:rotate-12 transition-transform duration-300 relative z-10"></i>    
-        </a>
-        
-        <!-- Twitter -->
-        <a href="#" class="w-12 h-12 bg-sky-500 text-white rounded-2xl flex items-center justify-center hover:bg-sky-600 transition-all duration-300 transform hover:scale-110 shadow-2xl group relative overflow-hidden" onclick="window.open('https://twitter.com/yourprofile', '_blank')" onmouseenter="this.querySelector('#social-sidebar .fa-twitter').style.transform='rotate(15deg) scale(1.2)'" onmouseleave="this.querySelector('#social-sidebar .fa-twitter').style.transform='rotate(0deg) scale(1)'">
-            <i class="fab fa-twitter text-lg group-hover:rotate-12 transition-transform duration-300 relative z-10"></i>    
-        </a>
-        
-        <!-- TikTok -->
-        <a href="#" class="w-12 h-12 bg-black text-white rounded-2xl flex items-center justify-center hover:bg-gray-800 transition-all duration-300 transform hover:scale-110 shadow-2xl group relative overflow-hidden" onclick="window.open('https://tiktok.com/@yourprofile', '_blank')" onmouseenter="this.querySelector('#social-sidebar .fa-tiktok').style.transform='rotate(15deg) scale(1.2)'" onmouseleave="this.querySelector('#social-sidebar .fa-tiktok').style.transform='rotate(0deg) scale(1)'">
-            <i class="fab fa-tiktok text-lg group-hover:rotate-12 transition-transform duration-300 relative z-10"></i>    
-        </a>
-    </div> --}}
     
     <!-- Notification Container -->
     <div id="notification-container" class="fixed top-4 right-4 z-[10000] pointer-events-none"></div>
@@ -300,7 +402,7 @@
         "@type": "Organization",
         "name": "وقت الحدث",
         "alternateName": "Event Time",
-        "url": "{{ url('/') }}",
+        "url": "https://eventtimesa.com",
         "logo": "{{ asset('assets/images/logo.png') }}",
         "contactPoint": {
             "@type": "ContactPoint",

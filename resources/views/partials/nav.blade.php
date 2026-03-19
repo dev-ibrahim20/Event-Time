@@ -40,13 +40,13 @@
                 </div>
                 
                 <!-- Quick Contact Button -->
-                <a href="tel:+966500000000" class="flex items-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
+                <a href="tel:+966570723038" class="flex items-center space-x-2 bg-red-600 text-white px-4 py-2 rounded-lg hover:bg-red-700 transition-colors">
                     <i class="fas fa-phone"></i>
                     <span class="text-sm font-medium">{{ app()->getLocale() == 'ar' ? 'اتصال سريع' : 'Quick Call' }}</span>
                 </a>
                 
                 <!-- Quote Request Button -->
-                <a href="https://wa.me/201234567890?text={{ app()->getLocale() == 'ar' ? 'أريد طلب عرض سعر' : 'I want to request a quote' }}" target="_blank" class="bg-gradient-to-r from-red-600 to-red-800 text-white px-6 py-2 rounded-lg hover:from-red-700 hover:to-red-900 transition-all duration-300 transform hover:scale-105">
+                <a href="https://wa.me/+966570723038?text={{ app()->getLocale() == 'ar' ? 'أريد طلب عرض سعر' : 'I want to request a quote' }}" target="_blank" class="bg-gradient-to-r from-red-600 to-red-800 text-white px-6 py-2 rounded-lg hover:from-red-700 hover:to-red-900 transition-all duration-300 transform hover:scale-105">
                     <span class="font-medium">{{ app()->getLocale() == 'ar' ? 'تواصل واتساب' : 'Contact WhatsApp' }}</span>
                 </a>
             </div>
@@ -122,11 +122,11 @@
             </a>
             
             <div class="pt-4 border-t space-y-3">
-                <a href="tel:+966500000000" class="flex items-center justify-center space-x-2 bg-red-600 text-white px-4 py-3 rounded-lg hover:bg-red-700 transition-colors">
+                <a href="tel:+966570723038" class="flex items-center justify-center space-x-2 bg-red-600 text-white px-4 py-3 rounded-lg hover:bg-red-700 transition-colors">
                     <i class="fas fa-phone"></i>
                     <span class="font-medium">{{ app()->getLocale() == 'ar' ? 'اتصال سريع' : 'Quick Call' }}</span>
                 </a>
-                <a href="https://wa.me/201234567890?text={{ app()->getLocale() == 'ar' ? 'أريد طلب عرض سعر' : 'I want to request a quote' }}" target="_blank" class="block text-center bg-gradient-to-r from-green-500 to-green-700 text-white px-6 py-3 rounded-lg hover:from-green-600 hover:to-green-800 transition-all duration-300">
+                <a href="https://wa.me/+966570723038?text={{ app()->getLocale() == 'ar' ? 'أريد طلب عرض سعر' : 'I want to request a quote' }}" target="_blank" class="block text-center bg-gradient-to-r from-green-500 to-green-700 text-white px-6 py-3 rounded-lg hover:from-green-600 hover:to-green-800 transition-all duration-300">
                     <i class="fab fa-whatsapp mr-2"></i>
                     <span class="font-medium">{{ app()->getLocale() == 'ar' ? 'تواصل عبر واتساب' : 'Contact via WhatsApp' }}</span>
                 </a>

@@ -471,17 +471,43 @@ window.openMap = function() {
 
 window.loadMap = function() {
     const mapDiv = document.getElementById('map');
-    mapDiv.innerHTML = `
-        <iframe 
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3632.123456789!2d46.6753!3d24.7136!2m3!1f0!2f0!3m2!1i1024!2i768!4f13.1!3m3!1sar!2ssa!4v1234567890"
-            width="100%" 
-            height="100%" 
-            style="border:0;" 
-            allowfullscreen="" 
-            loading="lazy">
-        </iframe>
-    `;
+    if (mapDiv) {
+        // Clear existing content
+        mapDiv.innerHTML = '';
+        
+        // Create iframe element with simple coordinates
+        const iframe = document.createElement('iframe');
+        iframe.src = 'https://www.google.com/maps?q=24.6501571,46.7154004&z=15&output=embed';
+        iframe.width = '100%';
+        iframe.height = '100%';
+        iframe.style.border = '0';
+        iframe.setAttribute('allowfullscreen', '');
+        iframe.setAttribute('loading', 'lazy');
+        iframe.style.referrerPolicy = 'no-referrer-when-downgrade';
+        
+        // Add iframe to map div
+        mapDiv.appendChild(iframe);
+        
+        console.log('Map loaded successfully');
+    } else {
+        console.error('Map div not found');
+    }
 };
+
+// Load map immediately and also on DOM ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', function() {
+        setTimeout(window.loadMap, 1000);
+    });
+} else {
+    // DOM is already loaded
+    setTimeout(window.loadMap, 500);
+}
+
+// Also try loading on window load as backup
+window.addEventListener('load', function() {
+    setTimeout(window.loadMap, 1500);
+});
 </script>
 
 @include('partials.clients-simple')

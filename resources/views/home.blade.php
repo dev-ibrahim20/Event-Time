@@ -10,8 +10,8 @@
     "@type": "Organization",
     "name": "وقت الحدث",
     "alternateName": "Event Time",
-    "url": "{{ url('/') }}",
-    "logo": "{{ asset('assets/images/logo.png') }}",
+    "url": "https://eventtimesa.com",
+    "logo": "{{ asset('assets/images/even-logo.jpeg') }}",
     "contactPoint": {
         "@type": "ContactPoint",
         "telephone": "+966500000000",

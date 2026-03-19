@@ -15,8 +15,8 @@
                     {{ app()->getLocale() == 'ar' ? 'شركتنا الرائدة في تجهيز المؤتمرات والمعارض والخيام الأوروبية بأعلى معايير الجودة والاحترافية.' : 'Our trusted company in conference, exhibition, and European tent setup with the highest quality and professional standards.' }}
                 </p>
                 @php
-    $socialLinks = \App\Models\SocialMedia::where('is_active', true)->orderBy('sort_order')->get();
-@endphp
+                     $socialLinks = \App\Models\SocialMedia::where('is_active', true)->orderBy('sort_order')->get();
+                @endphp
                 <div class="flex space-x-4 {{ app()->getLocale() === 'ar' ? 'space-x-reverse' : '' }}">
                     @php
                         $sidebarSocialLinks = \App\Models\SocialMedia::where('is_active', true)->orderBy('sort_order')->get();
@@ -25,14 +25,14 @@
                     @foreach($sidebarSocialLinks as $social)
                                @if ($social->name == 'whatsapp')
                                <!-- WhatsApp -->
-                            <a href="https://wa.me/201234567890?text={{ app()->getLocale() == 'ar' ? 'أريد استفسار' : 'I have a question' }}" target="_blank" class="w-12 h-12 bg-green-800 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                            <a href="https://wa.me/+966570723038?text={{ app()->getLocale() == 'ar' ? 'أريد استفسار' : 'I have a question' }}" target="_blank" class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center hover:bg-green-700 transition-all duration-300 transform hover:scale-110 shadow-lg">
                             <i class="fab fa-whatsapp text-xl"></i>
                             </a>
                             @endif
 
                             @if ($social->name == 'phone')
                             <!-- Phone -->
-                            <a href="tel:+966500000000" class="w-12 h-12 bg-blue-800 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+                            <a href="tel:+966570723038" class="w-12 h-12 bg-blue-800 text-green rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
                                 <i class="fas fa-phone text-xl"></i>
                             </a>
                             @endif
@@ -232,14 +232,14 @@
     @foreach($sidebarSocialLinks as $social)
         @if ($social->name == 'whatsapp')
             <!-- WhatsApp -->
-        <a href="https://wa.me/201234567890?text={{ app()->getLocale() == 'ar' ? 'أريد استفسار' : 'I have a question' }}" target="_blank" class="w-12 h-12 bg-green-800 text-white rounded-full flex items-center justify-center hover:bg-green-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+        <a href="https://wa.me/+966570723038?text={{ app()->getLocale() == 'ar' ? 'أريد استفسار' : 'I have a question' }}" target="_blank" class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center hover:bg-green-700 transition-all duration-300 transform hover:scale-110 shadow-lg">
             <i class="fab fa-whatsapp text-xl"></i>
         </a>
         @endif
 
         @if ($social->name == 'phone')
         <!-- Phone -->
-        <a href="tel:+966500000000" class="w-12 h-12 bg-blue-800 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+        <a href="tel:+966570723038" class="w-12 h-12 bg-blue-800 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
             <i class="fas fa-phone text-xl"></i>
         </a>
         @endif
@@ -329,12 +329,12 @@
     <!-- Fallback icons if no data in database -->
     @if($sidebarSocialLinks->isEmpty())
         <!-- WhatsApp -->
-        <a href="https://wa.me/201234567890?text={{ app()->getLocale() == 'ar' ? 'أريد استفسار' : 'I have a question' }}" target="_blank" class="w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+        <a href="https://wa.me/+966570723038?text={{ app()->getLocale() == 'ar' ? 'أريد استفسار' : 'I have a question' }}" target="_blank" class="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center hover:bg-green-700 transition-all duration-300 transform hover:scale-110 shadow-lg">
             <i class="fab fa-whatsapp text-xl"></i>
         </a>
         
         <!-- Phone -->
-        <a href="tel:+966500000000" class="w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
+        <a href="tel:+966570723038" class="w-12 h-12 bg-gray-800 text-white rounded-full flex items-center justify-center hover:bg-red-600 transition-all duration-300 transform hover:scale-110 shadow-lg">
             <i class="fas fa-phone text-xl"></i>
         </a>
         

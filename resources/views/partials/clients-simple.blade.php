@@ -1,3 +1,9 @@
+@php
+    $clients = \App\Models\Client::all();
+    if($clients->isEmpty()) {
+        return; // Don't render anything if no clients exist
+    }
+@endphp
 
 <style>
     /* Customers Slider Section */
@@ -56,38 +62,45 @@
     }
     
     .customer-slide {
-        min-width: 120px;
-        width: 120px;
-        height: 120px;
-        margin: 0 20px;
-        border-radius: 50%;
-        overflow: hidden;
+        flex: 0 0 auto;
+        margin: 0 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 150px;
+        height: 150px;
         background: rgba(255, 255, 255, 0.1);
-        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+        border-radius: 50%;
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.2);
         transition: all 0.3s ease;
-        border: 3px solid transparent;
-        background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)) padding-box,
-                    linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%) border-box;
-    }
-    
-    .customer-slide img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        transition: all 0.3s ease;
+        overflow: hidden;
+        position: relative;
     }
     
     .customer-slide:hover {
-        transform: scale(1.1);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        border: 3px solid transparent;
-        background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)) padding-box,
-                    linear-gradient(135deg, #505038 0%, #4b4b33 50%, #24240e 100%) border-box;
+        transform: scale(1.05);
+        background: rgba(255, 255, 255, 0.15);
+        border-color: rgba(255, 255, 255, 0.3);
+    }
+    
+    .customer-slide img {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 85%;
+        height: 85%;
+        object-fit: contain;
+        transition: all 0.3s ease;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.05);
+        padding: 8px;
     }
     
     .customer-slide:hover img {
-        transform: scale(1.05);
-        filter: brightness(1.2);
+        transform: translate(-50%, -50%) scale(1.05);
+        background: rgba(255, 255, 255, 0.1);
     }
     
     @keyframes slideAnimation {
@@ -99,99 +112,91 @@
         }
     }
     
+    .customers-slider:hover .slider-wrapper {
+        animation-play-state: paused;
+    }
+    
     @media (max-width: 768px) {
         .section-header h2 {
-            font-size: 2rem;
+            font-size: 2.5rem;
+        }
+        
+        .section-header p {
+            font-size: 1.4rem;
         }
         
         .customer-slide {
-            min-width: 80px;
-            width: 80px;
-            height: 80px;
-            margin: 0 15px;
+            margin: 0 25px;
+            width: 120px;
+            height: 120px;
         }
         
-        .customers-section {
-            padding: 30px 0;
+        .customer-slide img {
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .customer-slide {
+            margin: 0 20px;
+            width: 100px;
+            height: 100px;
+        }
+        
+        .customer-slide img {
         }
     }
 </style>
 
-<!-- Customers Section -->
-<section class="customers-section" id="customers">
+<section class="customers-section">
     <div class="customers-container">
         <div class="section-header">
-            <h2>{{ app()->getLocale() == 'ar' ? 'شركائنا' : 'Our Partners' }}</h2>
-            <p>{{ app()->getLocale() == 'ar' ? 'انضم الى شركائنا' : 'Join Our Partners' }}</p>
+            <h2>{{ app()->getLocale() == 'ar' ? 'عملاؤنا' : 'Our Clients' }}</h2>
+            <p>{{ app()->getLocale() == 'ar' ? 'نفتخر بالعمل مع أفضل الشركات والمؤسسات' : 'We are proud to work with the best companies and institutions' }}</p>
         </div>
         
         <div class="customers-slider">
             <div class="slider-wrapper">
-                <!-- First set of logos -->
+                <!-- First set of clients -->
+                @foreach($clients as $client)
                 <div class="customer-slide">
-                    <img src="https://picsum.photos/seed/customer1/120/120.jpg" alt="شركة النخبة">
+                    @if($client->website_url)
+                        <a href="{{ $client->website_url }}" target="_blank" rel="noopener noreferrer">
+                            @if($client->image)
+                                <img src="{{ asset('storage/' . $client->image) }}" alt="{{ $client->name }}">
+                            @else
+                                <span class="text-white text-center text-sm font-medium">{{ $client->name }}</span>
+                            @endif
+                        </a>
+                    @else
+                        @if($client->image)
+                            <img src="{{ asset('storage/' . $client->image) }}" alt="{{ $client->name }}">
+                        @else
+                            <span class="text-white text-center text-sm font-medium">{{ $client->name }}</span>
+                        @endif
+                    @endif
                 </div>
-                
+                @endforeach
+                `
+                <!-- Duplicate clients for continuous animation -->
+                @foreach($clients as $client)
                 <div class="customer-slide">
-                    <img src="https://picsum.photos/seed/customer2/120/120.jpg" alt="مجموعة المملكة">
+                    @if($client->website_url)
+                        <a href="{{ $client->website_url }}" target="_blank" rel="noopener noreferrer">
+                            @if($client->image)
+                                <img src="{{ asset('storage/' . $client->image) }}" alt="{{ $client->name }}">
+                            @else
+                                <span class="text-white text-center text-sm font-medium">{{ $client->name }}</span>
+                            @endif
+                        </a>
+                    @else
+                        @if($client->image)
+                            <img src="{{ asset('storage/' . $client->image) }}" alt="{{ $client->name }}">
+                        @else
+                            <span class="text-white text-center text-sm font-medium">{{ $client->name }}</span>
+                        @endif
+                    @endif
                 </div>
-                
-                <div class="customer-slide">
-                    <img src="https://picsum.photos/seed/customer3/120/120.jpg" alt="دار الزمان">
-                </div>
-                
-                <div class="customer-slide">
-                    <img src="https://picsum.photos/seed/customer4/120/120.jpg" alt="فنون الشرق">
-                </div>
-                
-                <div class="customer-slide">
-                    <img src="https://picsum.photos/seed/customer5/120/120.jpg" alt="جمعية الأمل">
-                </div>
-                
-                <div class="customer-slide">
-                    <img src="https://picsum.photos/seed/customer6/120/120.jpg" alt="رؤية المستقبل">
-                </div>
-                
-                <div class="customer-slide">
-                    <img src="https://picsum.photos/seed/customer7/120/120.jpg" alt="شركة السعادة">
-                </div>
-                
-                <div class="customer-slide">
-                    <img src="https://picsum.photos/seed/customer8/120/120.jpg" alt="مؤسسة العطاء">
-                </div>
-                
-                <!-- Duplicate logos for continuous animation -->
-                <div class="customer-slide">
-                    <img src="https://picsum.photos/seed/customer1/120/120.jpg" alt="شركة النخبة">
-                </div>
-                
-                <div class="customer-slide">
-                    <img src="https://picsum.photos/seed/customer2/120/120.jpg" alt="مجموعة المملكة">
-                </div>
-                
-                <div class="customer-slide">
-                    <img src="https://picsum.photos/seed/customer3/120/120.jpg" alt="دار الزمان">
-                </div>
-                
-                <div class="customer-slide">
-                    <img src="https://picsum.photos/seed/customer4/120/120.jpg" alt="فنون الشرق">
-                </div>
-                
-                <div class="customer-slide">
-                    <img src="https://picsum.photos/seed/customer5/120/120.jpg" alt="جمعية الأمل">
-                </div>
-                
-                <div class="customer-slide">
-                    <img src="https://picsum.photos/seed/customer6/120/120.jpg" alt="رؤية المستقبل">
-                </div>
-                
-                <div class="customer-slide">
-                    <img src="https://picsum.photos/seed/customer7/120/120.jpg" alt="شركة السعادة">
-                </div>
-                
-                <div class="customer-slide">
-                    <img src="https://picsum.photos/seed/customer8/120/120.jpg" alt="مؤسسة العطاء">
-                </div>
+                @endforeach
             </div>
         </div>
     </div>
